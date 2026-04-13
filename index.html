@@ -2,749 +2,1236 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soluções Diferentes – Telecomunicações & Energia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Soluções Diferentes – Telecomunicações &amp; Energia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #0b1e3d;
-    --blue: #1a3a6b;
-    --accent: #e8401c;
-    --gold: #f0a500;
-    --cyan: #00b4d8;
-    --light: #f5f7fa;
-    --white: #ffffff;
-    --gray: #6b7280;
-    --text: #1e293b;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { font-family:'DM Sans',sans-serif; color:var(--text); background:var(--white); overflow-x:hidden; }
+:root{
+  --navy:#0b1e3d;--accent:#e8401c;--gold:#f0a500;
+  --cyan:#00b4d8;--light:#f5f7fa;--white:#ffffff;
+  --gray:#6b7280;--text:#1e293b;--border:rgba(0,0,0,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 
-  /* ─── TOPBAR ─── */
-  .topbar {
-    background:var(--navy);
-    color:rgba(255,255,255,.7);
-    font-size:.78rem;
-    padding:7px 48px;
-    display:flex; justify-content:flex-end; align-items:center; gap:20px;
-  }
-  .topbar a { color:rgba(255,255,255,.65); text-decoration:none; transition:color .2s; }
-  .topbar a:hover { color:var(--gold); }
-  .wa-pill {
-    display:inline-flex; align-items:center; gap:6px;
-    background:#25D366; color:#fff !important;
-    padding:4px 12px; border-radius:100px;
-    font-weight:600; font-size:.76rem; transition:background .2s !important;
-  }
-  .wa-pill:hover { background:#1ebe5a !important; }
+/* ─────────────── TOPBAR ─────────────── */
+.topbar{background:var(--navy);font-size:.78rem;padding:6px 48px;display:flex;justify-content:flex-end;align-items:center;gap:22px;}
+.topbar a{color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;letter-spacing:.2px;}
+.topbar a:hover{color:var(--gold);}
+.wa-pill{display:inline-flex;align-items:center;gap:6px;background:#25D366;color:#fff !important;padding:4px 13px;border-radius:100px;font-weight:600;font-size:.75rem;letter-spacing:.3px;}
+.wa-pill:hover{background:#1ebe5a !important;}
+.social-icons{display:flex;gap:6px;}
+.soc{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.7;transition:opacity .2s,transform .2s;}
+.soc:hover{opacity:1;transform:scale(1.1);}
+.soc svg{width:13px;height:13px;fill:#fff;}
+.soc-fb{background:#1877F2;}.soc-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}.soc-tt{background:#000;}
 
-  /* ─── NAV ─── */
-  nav {
-    position:sticky; top:0; z-index:200;
-    background:var(--white);
-    box-shadow:0 2px 20px rgba(0,0,0,.08);
-    padding:0 40px;
-    display:flex; align-items:center; justify-content:space-between;
-    height:72px; transition:all .3s;
-  }
-  .nav-logo { display:flex; align-items:center; gap:14px; text-decoration:none; }
-  .nav-logo img { height:52px; width:52px; border-radius:50%; object-fit:cover; }
-  .nav-logo-text { font-family:'Sora',sans-serif; font-weight:800; font-size:1.15rem; color:var(--navy); line-height:1.2; }
-  .nav-logo-text span { display:block; font-size:.68rem; font-weight:400; color:var(--gray); letter-spacing:.5px; }
-  .nav-links { display:flex; align-items:center; gap:30px; list-style:none; }
-  .nav-links a {
-    font-size:.87rem; font-weight:500; color:var(--text); text-decoration:none;
-    transition:color .2s; position:relative;
-  }
-  .nav-links a::after {
-    content:''; position:absolute; bottom:-4px; left:0;
-    width:0; height:2px; background:var(--accent); transition:width .3s;
-  }
-  .nav-links a:hover { color:var(--accent); }
-  .nav-links a:hover::after { width:100%; }
-  .btn-crm {
-    background:var(--accent); color:var(--white) !important;
-    padding:9px 20px; border-radius:6px;
-    font-weight:600 !important; font-size:.83rem !important;
-    display:flex; align-items:center; gap:6px; white-space:nowrap;
-  }
-  .btn-crm::after { display:none !important; }
-  .btn-crm:hover { background:#c23416 !important; transform:translateY(-1px); }
+/* ─────────────── NAV ─────────────── */
+nav{position:sticky;top:0;z-index:300;background:var(--white);box-shadow:0 1px 0 var(--border),0 4px 24px rgba(0,0,0,.06);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav-logo{display:flex;align-items:center;gap:13px;text-decoration:none;}
+.nav-logo img{height:50px;width:50px;border-radius:50%;object-fit:cover;}
+.nav-logo-text{font-family:'Sora',sans-serif;font-weight:800;font-size:1.08rem;color:var(--navy);line-height:1.25;}
+.nav-logo-text span{display:block;font-size:.64rem;font-weight:500;color:var(--gray);letter-spacing:.6px;text-transform:uppercase;margin-top:1px;}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links > li > a{font-size:.84rem;font-weight:500;color:var(--text);text-decoration:none;padding:8px 12px;border-radius:8px;transition:all .2s;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;}
+.nav-links > li > a:hover{color:var(--accent);background:rgba(232,64,28,.06);}
 
-  /* ─── HERO SLIDESHOW ─── */
-  .hero {
-    position:relative; width:100%; height:100vh; min-height:600px;
-    overflow:hidden; background:var(--navy);
-  }
-  .slide {
-    position:absolute; inset:0;
-    opacity:0; transition:opacity 1.2s ease;
-    background-size:cover; background-position:center;
-  }
-  .slide.active { opacity:1; }
-  .slide::after {
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(
-      105deg,
-      rgba(11,30,61,.85) 0%,
-      rgba(11,30,61,.55) 50%,
-      rgba(0,0,0,.2) 100%
-    );
-  }
+/* ── Hover Dropdown ── */
+.nav-dd{position:relative;}
+.nav-dd > a .chev{width:11px;height:11px;opacity:.5;transition:transform .25s,opacity .2s;flex-shrink:0;}
+.nav-dd:hover > a{color:var(--accent);background:rgba(232,64,28,.06);}
+.nav-dd:hover > a .chev{transform:rotate(180deg);opacity:1;}
+.dd-panel{
+  visibility:hidden;opacity:0;pointer-events:none;
+  position:absolute;top:calc(100% + 12px);left:50%;
+  transform:translateX(-50%) translateY(-6px);
+  background:var(--white);border-radius:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.14),0 0 0 1px var(--border);
+  padding:20px;z-index:500;
+  transition:opacity .2s ease,transform .2s ease,visibility .2s;
+}
+.nav-dd:hover .dd-panel{visibility:visible;opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.dd-panel::before{content:'';position:absolute;top:-6px;left:50%;width:12px;height:12px;background:var(--white);border-left:1px solid var(--border);border-top:1px solid var(--border);transform:translateX(-50%) rotate(45deg);}
+.dd-head{font-size:.65rem;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--gray);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.dd-brands{display:grid;grid-template-columns:1fr 1fr;gap:7px;min-width:320px;}
+.dd-energy{display:grid;grid-template-columns:repeat(3,1fr);gap:0;min-width:540px;}
+.dd-ecol{padding:0 14px;}
+.dd-ecol:first-child{padding-left:0;}
+.dd-ecol:last-child{padding-right:0;}
+.dd-ecol:not(:last-child){border-right:1px solid var(--border);}
+.dd-ecol-title{font-size:.64rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--gray);margin-bottom:9px;}
+.dd-ecol-list{display:flex;flex-direction:column;gap:5px;}
+.bchip{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:9px;border:1px solid transparent;text-decoration:none;background:var(--light);transition:all .18s;}
+.bchip:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.09);}
+.bdot{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:.58rem;color:#fff;flex-shrink:0;text-align:center;line-height:1.2;}
+.bchip-name{font-family:'Sora',sans-serif;font-weight:700;font-size:.78rem;color:var(--navy);}
+.bchip-sub{font-size:.63rem;color:var(--gray);margin-top:1px;}
+/* Brand dot colors — cores oficiais */
+.d-meo  {background:#FF6200;}                                   /* MEO — laranja oficial */
+.d-nos  {background:#003DA5;}                                   /* NOS — azul oficial */
+.d-voda {background:#E60000;}                                   /* Vodafone — vermelho oficial */
+.d-digi {background:#FFCD00;}                                   /* DIGI — amarelo oficial */
+.d-nowo {background:#FF5A00;}                                   /* NOWO — laranja oficial */
+.d-edp  {background:#00A859;}                                   /* EDP — verde oficial */
+.d-galp {background:#DC0A2D;}                                   /* Galp — vermelho oficial */
+.d-iber {background:#78BE20;}                                   /* Iberdrola — verde lima oficial */
+.d-endesa{background:#007CC2;}                                  /* Endesa — azul oficial */
+.d-repsol{background:#F4A81D;}                                  /* Repsol — amarelo/ouro oficial */
+.d-porto {background:linear-gradient(135deg,#1e3a5f,#2d5a8e);} /* Portulogus */
+/* chip hover tints */
+.bchip-meo:hover   {background:rgba(255,98,0,.07);   border-color:rgba(255,98,0,.28);}
+.bchip-nos:hover   {background:rgba(0,61,165,.07);   border-color:rgba(0,61,165,.28);}
+.bchip-voda:hover  {background:rgba(230,0,0,.07);    border-color:rgba(230,0,0,.28);}
+.bchip-digi:hover  {background:rgba(255,205,0,.1);   border-color:rgba(255,205,0,.38);}
+.bchip-nowo:hover  {background:rgba(255,90,0,.07);   border-color:rgba(255,90,0,.28);}
+.bchip-edp:hover   {background:rgba(0,168,89,.07);   border-color:rgba(0,168,89,.28);}
+.bchip-galp:hover  {background:rgba(220,10,45,.07);  border-color:rgba(220,10,45,.28);}
+.bchip-iber:hover  {background:rgba(120,190,32,.08); border-color:rgba(120,190,32,.32);}
+.bchip-endesa:hover{background:rgba(0,124,194,.07);  border-color:rgba(0,124,194,.28);}
+.bchip-repsol:hover{background:rgba(244,168,29,.1);  border-color:rgba(244,168,29,.38);}
+.bchip-porto:hover {background:rgba(30,58,95,.07);   border-color:rgba(30,58,95,.25);}
+.dd-cta{display:block;text-align:center;margin-top:12px;padding:10px;border-radius:9px;background:var(--navy);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.74rem;text-decoration:none;letter-spacing:.3px;transition:background .2s;}
+.dd-cta:hover{background:var(--accent);}
 
-  /* slide backgrounds */
-  .slide-1 { background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1800&auto=format&fit=crop'); }
-  .slide-2 { background-image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1800&auto=format&fit=crop'); }
-  .slide-3 { background-image:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1800&auto=format&fit=crop'); }
-  .slide-4 { background-image:url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1800&auto=format&fit=crop'); }
-  .slide-5 { background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1800&auto=format&fit=crop'); }
+/* Nav buttons */
+.btn-sim-nav{background:linear-gradient(135deg,#f59e0b,#e8401c);color:#fff;padding:9px 16px;border-radius:7px;font-family:'Sora',sans-serif;font-weight:700;font-size:.8rem;display:flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none;box-shadow:0 3px 12px rgba(245,158,11,.28);transition:all .2s;letter-spacing:.2px;}
+.btn-sim-nav:hover{filter:brightness(1.07);transform:translateY(-1px);box-shadow:0 6px 20px rgba(245,158,11,.38);}
+.btn-crm{background:var(--accent);color:#fff;padding:9px 16px;border-radius:7px;font-family:'Sora',sans-serif;font-weight:700;font-size:.8rem;display:flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none;letter-spacing:.2px;transition:all .2s;}
+.btn-crm:hover{background:#c23416;transform:translateY(-1px);}
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;cursor:pointer;background:none;border:none;padding:6px;}
+.hamburger span{display:block;height:2px;border-radius:2px;background:var(--navy);transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:299;backdrop-filter:blur(3px);}
+.nav-overlay.show{display:block;}
 
-  .hero-content {
-    position:relative; z-index:10;
-    height:100%; display:flex; flex-direction:column;
-    justify-content:center; padding:0 80px;
-    max-width:800px;
-  }
-  .hero-tag {
-    display:inline-flex; align-items:center; gap:8px;
-    background:rgba(232,64,28,.18); border:1px solid rgba(232,64,28,.35);
-    color:#ff7254; font-size:.75rem; font-weight:700;
-    letter-spacing:1.8px; text-transform:uppercase;
-    padding:6px 16px; border-radius:100px; margin-bottom:28px;
-    width:fit-content;
-    animation:fadeUp .7s ease both;
-  }
-  .slide-title {
-    font-family:'Sora',sans-serif;
-    font-size:clamp(2.2rem,5vw,3.8rem);
-    font-weight:800; color:var(--white);
-    line-height:1.1; letter-spacing:-1px;
-    margin-bottom:20px;
-    animation:fadeUp .7s .1s ease both;
-  }
-  .slide-title em { font-style:normal; color:var(--gold); }
-  .slide-title .cyan { color:var(--cyan); }
-  .hero-sub {
-    font-size:1.05rem; color:rgba(255,255,255,.65);
-    line-height:1.7; max-width:520px; margin-bottom:36px;
-    animation:fadeUp .7s .2s ease both;
-  }
-  .hero-ctas {
-    display:flex; gap:14px; flex-wrap:wrap;
-    animation:fadeUp .7s .3s ease both;
-  }
-  .btn-primary {
-    background:var(--accent); color:var(--white);
-    padding:14px 28px; border-radius:8px;
-    font-family:'Sora',sans-serif; font-weight:700; font-size:.9rem;
-    text-decoration:none; transition:all .2s;
-    display:inline-flex; align-items:center; gap:8px;
-  }
-  .btn-primary:hover { background:#c23416; transform:translateY(-2px); box-shadow:0 10px 28px rgba(232,64,28,.35); }
-  .btn-outline {
-    background:transparent; color:var(--white);
-    border:2px solid rgba(255,255,255,.3);
-    padding:14px 28px; border-radius:8px;
-    font-family:'Sora',sans-serif; font-weight:600; font-size:.9rem;
-    text-decoration:none; transition:all .2s;
-  }
-  .btn-outline:hover { border-color:var(--white); background:rgba(255,255,255,.1); }
+/* ─────────────── HERO ─────────────── */
+.hero{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;background:var(--navy);}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center;}
+.slide.active{opacity:1;}
+.slide::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,rgba(11,30,61,.9) 0%,rgba(11,30,61,.55) 55%,rgba(0,0,0,.2) 100%);}
+.sl1{background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1800&auto=format&fit=crop');}
+.sl2{background-image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1800&auto=format&fit=crop');}
+.sl3{background-image:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1800&auto=format&fit=crop');}
+.sl4{background-image:url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1800&auto=format&fit=crop');}
+.sl5{background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1800&auto=format&fit=crop');}
+.hero-content{position:relative;z-index:10;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 80px;max-width:820px;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(232,64,28,.16);border:1px solid rgba(232,64,28,.32);color:#ff7254;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:28px;width:fit-content;animation:fadeUp .7s ease both;}
+.slide-title{font-family:'Sora',sans-serif;font-size:clamp(2.1rem,4.8vw,3.7rem);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-1.5px;margin-bottom:22px;animation:fadeUp .7s .1s ease both;}
+.slide-title em{font-style:normal;color:var(--gold);}
+.slide-title .cy{color:var(--cyan);}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.62);line-height:1.75;max-width:500px;margin-bottom:38px;animation:fadeUp .7s .2s ease both;font-weight:400;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .7s .3s ease both;}
+.btn-p{background:var(--accent);color:#fff;padding:14px 28px;border-radius:9px;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;letter-spacing:.2px;}
+.btn-p:hover{background:#c23416;transform:translateY(-2px);box-shadow:0 10px 28px rgba(232,64,28,.35);}
+.btn-o{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.28);padding:14px 28px;border-radius:9px;font-family:'Sora',sans-serif;font-weight:600;font-size:.88rem;text-decoration:none;transition:all .2s;letter-spacing:.2px;}
+.btn-o:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);}
+.btn-sim-h{background:linear-gradient(135deg,#f59e0b,#f97316);color:#fff;padding:14px 28px;border-radius:9px;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 20px rgba(245,158,11,.38);letter-spacing:.2px;}
+.btn-sim-h:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,158,11,.5);}
+.slide-dots{position:absolute;bottom:28px;left:80px;z-index:20;display:flex;gap:10px;}
+.dot{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,.3);cursor:pointer;transition:all .4s;}
+.dot.active{width:28px;background:var(--gold);}
+.slide-arrows{position:absolute;bottom:20px;right:48px;z-index:20;display:flex;gap:10px;}
+.arrow{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:1rem;}
+.arrow:hover{background:var(--accent);border-color:var(--accent);}
+.hero-stats{position:absolute;bottom:0;left:0;right:0;z-index:15;display:flex;background:rgba(11,30,61,.78);backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,.07);}
+.stat{flex:1;padding:20px 32px;border-right:1px solid rgba(255,255,255,.07);text-align:center;}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Sora',sans-serif;font-size:1.7rem;font-weight:800;color:#fff;line-height:1;}
+.stat-num span{color:var(--gold);}
+.stat-lbl{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:4px;letter-spacing:.3px;}
 
-  /* slide controls */
-  .slide-dots {
-    position:absolute; bottom:32px; left:80px; z-index:20;
-    display:flex; gap:10px;
-  }
-  .dot {
-    width:8px; height:8px; border-radius:4px; background:rgba(255,255,255,.35);
-    cursor:pointer; transition:all .4s;
-  }
-  .dot.active { width:28px; background:var(--gold); }
-  .slide-arrows {
-    position:absolute; bottom:24px; right:48px; z-index:20;
-    display:flex; gap:10px;
-  }
-  .arrow {
-    width:44px; height:44px; border-radius:50%;
-    background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2);
-    color:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center;
-    transition:all .2s; font-size:1.1rem;
-  }
-  .arrow:hover { background:var(--accent); border-color:var(--accent); }
+/* ─────────────── SIM BANNER ─────────────── */
+.sim-banner{background:linear-gradient(135deg,#071528 0%,#0f2a50 55%,#071f3a 100%);padding:56px 80px;position:relative;overflow:hidden;}
+.sim-banner::before{content:'';position:absolute;top:-80px;right:-80px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.14) 0%,transparent 68%);pointer-events:none;}
+.sim-banner::after{content:'';position:absolute;bottom:-100px;left:5%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,216,.08) 0%,transparent 70%);pointer-events:none;}
+.sb-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:48px;position:relative;z-index:1;}
+.sb-left{flex:1;}
+.sb-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.28);color:#fbbf24;font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:18px;}
+.sim-banner h2{font-family:'Sora',sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:12px;letter-spacing:-.5px;}
+.sim-banner h2 em{font-style:normal;color:#fbbf24;}
+.sim-banner p{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.72;max-width:480px;}
+.sb-feats{display:flex;gap:20px;margin-top:20px;flex-wrap:wrap;}
+.sb-feat{display:flex;align-items:center;gap:7px;font-size:.78rem;color:rgba(255,255,255,.42);}
+.sb-feat span{color:#34d399;font-size:.85rem;}
+.btn-sim-main{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#f59e0b,#f97316);color:#fff;text-decoration:none;padding:17px 38px;border-radius:11px;font-family:'Sora',sans-serif;font-weight:800;font-size:.96rem;box-shadow:0 10px 32px rgba(245,158,11,.42);transition:all .25s;white-space:nowrap;letter-spacing:.2px;}
+.btn-sim-main:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(245,158,11,.52);filter:brightness(1.04);}
 
-  /* hero stats bar */
-  .hero-stats {
-    position:absolute; bottom:0; left:0; right:0; z-index:15;
-    display:flex;
-    background:rgba(11,30,61,.75);
-    backdrop-filter:blur(12px);
-    border-top:1px solid rgba(255,255,255,.08);
-  }
-  .stat {
-    flex:1; padding:22px 40px;
-    border-right:1px solid rgba(255,255,255,.08);
-    text-align:center;
-  }
-  .stat:last-child { border-right:none; }
-  .stat-num {
-    font-family:'Sora',sans-serif; font-size:1.8rem; font-weight:800;
-    color:var(--white); line-height:1;
-  }
-  .stat-num span { color:var(--gold); }
-  .stat-lbl { font-size:.75rem; color:rgba(255,255,255,.5); margin-top:4px; }
+/* ─────────────── RECRUIT ─────────────── */
+.recruit{background:var(--accent);padding:16px 80px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.recruit p{font-family:'Sora',sans-serif;font-weight:600;color:#fff;font-size:.9rem;letter-spacing:.1px;}
+.recruit a{background:#fff;color:var(--accent);padding:9px 24px;border-radius:7px;font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;text-decoration:none;transition:all .2s;white-space:nowrap;letter-spacing:.3px;}
+.recruit a:hover{background:var(--navy);color:#fff;}
 
-  /* ─── RECRUIT BANNER ─── */
-  .recruit {
-    background:var(--accent); padding:18px 48px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .recruit p { font-family:'Sora',sans-serif; font-weight:600; color:var(--white); font-size:.95rem; }
-  .recruit a {
-    background:var(--white); color:var(--accent);
-    padding:9px 22px; border-radius:6px;
-    font-weight:700; font-size:.83rem; text-decoration:none; transition:all .2s;
-  }
-  .recruit a:hover { background:var(--navy); color:var(--white); }
+/* ─────────────── SECTIONS ─────────────── */
+section{padding:88px 80px;}
+.s-label{font-size:.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.s-title{font-family:'Sora',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--navy);line-height:1.15;letter-spacing:-.8px;}
+.s-title em{font-style:normal;color:var(--accent);}
+.s-sub{font-size:.92rem;color:var(--gray);line-height:1.72;max-width:540px;margin-top:12px;}
+.inner{max-width:1200px;margin:0 auto;}
 
-  /* ─── SECTION BASE ─── */
-  section { padding:88px 48px; }
-  .s-tag { font-size:.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
-  .s-title {
-    font-family:'Sora',sans-serif;
-    font-size:clamp(1.7rem,3vw,2.5rem);
-    font-weight:800; color:var(--navy); line-height:1.15; letter-spacing:-.5px;
-  }
-  .s-title em { font-style:italic; color:var(--accent); }
-  .inner { max-width:1200px; margin:0 auto; }
+/* ─────────────── MVV ─────────────── */
+.mvv{background:var(--light);}
+.mvv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;}
+.mvv-card{background:#fff;border-radius:16px;padding:36px 30px;border:1px solid var(--border);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.mvv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.mvv-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.07);}
+.mvv-card:hover::before{transform:scaleX(1);}
+.mvv-icon{font-size:1.9rem;margin-bottom:18px;}
+.mvv-card h3{font-family:'Sora',sans-serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px;}
+.mvv-card p{font-size:.86rem;color:var(--gray);line-height:1.72;}
 
-  /* ─── MVV ─── */
-  .mvv { background:var(--light); }
-  .mvv-grid {
-    display:grid; grid-template-columns:repeat(3,1fr);
-    gap:28px; margin-top:56px;
-  }
-  .mvv-card {
-    background:var(--white); border-radius:16px;
-    padding:36px 32px; border:1px solid rgba(0,0,0,.06);
-    transition:transform .3s, box-shadow .3s; position:relative; overflow:hidden;
-  }
-  .mvv-card::before {
-    content:''; position:absolute; top:0; left:0; right:0;
-    height:3px; background:var(--accent);
-    transform:scaleX(0); transform-origin:left; transition:transform .3s;
-  }
-  .mvv-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,.08); }
-  .mvv-card:hover::before { transform:scaleX(1); }
-  .mvv-icon { font-size:2rem; margin-bottom:20px; }
-  .mvv-card h3 { font-family:'Sora',sans-serif; font-size:1.1rem; font-weight:700; color:var(--navy); margin-bottom:12px; }
-  .mvv-card p { font-size:.87rem; color:var(--gray); line-height:1.7; }
+/* ─────────────── GALLERY ─────────────── */
+.gallery-strip{overflow:hidden;display:flex;height:300px;}
+.gallery-strip img{flex:1;object-fit:cover;filter:brightness(.68) saturate(.85);transition:flex .5s ease,filter .4s;min-width:0;}
+.gallery-strip img:hover{flex:3;filter:brightness(1) saturate(1.1);}
 
-  /* ─── SERVICES ─── */
-  .svc-grid {
-    display:grid; grid-template-columns:repeat(3,1fr);
-    gap:20px; margin-top:52px;
-  }
-  .svc-card {
-    border-radius:14px; border:1px solid rgba(0,0,0,.07);
-    padding:28px; cursor:default; transition:all .3s;
-    display:flex; flex-direction:column; gap:12px;
-  }
-  .svc-card:hover { background:var(--navy); border-color:var(--navy); transform:translateY(-4px); box-shadow:0 16px 40px rgba(10,22,40,.18); }
-  .svc-card:hover .svc-title { color:var(--white); }
-  .svc-card:hover .svc-desc { color:rgba(255,255,255,.55); }
-  .svc-icon { font-size:1.5rem; }
-  .svc-title { font-family:'Sora',sans-serif; font-size:.95rem; font-weight:700; color:var(--navy); transition:color .3s; }
-  .svc-desc { font-size:.82rem; color:var(--gray); line-height:1.6; transition:color .3s; }
+/* ─────────────── BRANDS SECTION ─────────────── */
+.brands-section{padding:88px 80px;}
+.brands-section.alt{background:var(--light);}
 
-  /* ─── IMAGE GALLERY STRIP ─── */
-  .gallery-strip {
-    background:var(--navy); padding:0; overflow:hidden;
-    display:flex; height:340px;
-  }
-  .gallery-strip img {
-    flex:1; object-fit:cover; filter:brightness(.7) saturate(.9);
-    transition:flex .5s ease, filter .4s;
-    min-width:0;
-  }
-  .gallery-strip img:hover { flex:3; filter:brightness(1) saturate(1.1); }
+/* Telecom cards */
+.telecom-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:48px;}
+.brand-card{background:#fff;border-radius:16px;border:1.5px solid var(--border);padding:30px 16px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:11px;transition:all .3s;position:relative;overflow:hidden;cursor:default;}
+.brand-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;transform:scaleX(0);transition:transform .3s;}
+.brand-card:hover{transform:translateY(-5px);box-shadow:0 16px 44px rgba(0,0,0,.1);border-color:transparent;}
+.brand-card:hover::after{transform:scaleX(1);}
+.brand-logo{width:62px;height:62px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:.85rem;color:#fff;margin:0 auto;}
+.brand-card-name{font-family:'Sora',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy);}
+.brand-desc{font-size:.76rem;color:var(--gray);line-height:1.6;}
+.brand-pill{font-size:.63rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 10px;border-radius:100px;}
+/* Card accent lines */
+.bc-meo-c::after{background:#FF6200;} .bc-nos-c::after{background:#003DA5;}
+.bc-voda-c::after{background:#E60000;} .bc-digi-c::after{background:#FFCD00;}
+.bc-nowo-c::after{background:#FF5A00;}
 
-  /* ─── CERT ─── */
-  .cert { background:var(--navy); text-align:center; }
-  .cert .s-title { color:var(--white); }
-  .cert .s-tag { color:var(--gold); }
-  .cert-row {
-    display:flex; justify-content:center; align-items:center;
-    gap:56px; margin-top:52px; flex-wrap:wrap;
-  }
-  .cert-badge {
-    display:flex; flex-direction:column; align-items:center; gap:10px;
-    opacity:.65; transition:opacity .2s;
-  }
-  .cert-badge:hover { opacity:1; }
-  .cert-badge-icon {
-    width:76px; height:76px; border-radius:50%;
-    border:2px solid rgba(255,255,255,.2);
-    display:flex; align-items:center; justify-content:center;
-    font-size:1.7rem; color:var(--gold);
-  }
-  .cert-badge span { font-size:.75rem; color:rgba(255,255,255,.55); letter-spacing:.5px; }
+/* Energy section */
+.energy-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:48px;}
+.ecol-title{font-family:'Sora',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:18px;padding-bottom:10px;border-bottom:1.5px solid var(--border);display:flex;align-items:center;gap:7px;}
+.ecol-brands{display:flex;flex-direction:column;gap:10px;}
+.ebrand{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:#fff;border:1px solid var(--border);transition:all .22s;}
+.ebrand:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08);border-color:transparent;}
+.edot{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:.62rem;color:#fff;flex-shrink:0;text-align:center;line-height:1.3;}
+.einfo-name{font-family:'Sora',sans-serif;font-weight:700;font-size:.84rem;color:var(--navy);}
+.einfo-sub{font-size:.68rem;color:var(--gray);margin-top:1px;}
 
-  /* ─── CTA ─── */
-  .cta-band {
-    background:linear-gradient(135deg,var(--accent) 0%,#c23416 100%);
-    display:flex; align-items:center; justify-content:space-between;
-    gap:40px; padding:72px 80px;
-  }
-  .cta-band h2 {
-    font-family:'Sora',sans-serif;
-    font-size:clamp(1.5rem,3vw,2.3rem);
-    font-weight:800; color:var(--white); line-height:1.2; max-width:480px;
-  }
-  .cta-band a {
-    background:var(--white); color:var(--accent);
-    padding:15px 34px; border-radius:8px;
-    font-family:'Sora',sans-serif; font-weight:700; font-size:.92rem;
-    text-decoration:none; white-space:nowrap; flex-shrink:0; transition:all .2s;
-  }
-  .cta-band a:hover { background:var(--navy); color:var(--white); }
+/* ─────────────── SERVICES ─────────────── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px;}
+.svc-card{border-radius:14px;border:1px solid var(--border);padding:28px;cursor:default;transition:all .28s;display:flex;flex-direction:column;gap:11px;}
+.svc-card:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-4px);box-shadow:0 16px 40px rgba(10,22,40,.16);}
+.svc-card:hover .svc-name{color:#fff;}
+.svc-card:hover .svc-text{color:rgba(255,255,255,.52);}
+.svc-card:hover .svc-link{color:#fbbf24;}
+.svc-icon{font-size:1.45rem;}
+.svc-name{font-family:'Sora',sans-serif;font-size:.92rem;font-weight:700;color:var(--navy);transition:color .28s;}
+.svc-text{font-size:.81rem;color:var(--gray);line-height:1.65;transition:color .28s;}
+.svc-link{font-size:.76rem;font-weight:700;color:var(--accent);text-decoration:none;transition:color .28s;}
+.svc-sim{border:1.5px solid rgba(245,158,11,.28);background:linear-gradient(135deg,rgba(245,158,11,.04),rgba(249,115,22,.03));}
+.svc-sim:hover{background:linear-gradient(135deg,#f59e0b,#f97316) !important;border-color:transparent !important;}
 
-  /* ─── FOOTER ─── */
-  footer { background:var(--navy); padding:64px 48px 36px; }
-  .footer-grid {
-    display:grid; grid-template-columns:2fr 1fr 1fr 1.3fr;
-    gap:48px; margin-bottom:52px;
-  }
-  .footer-brand-logo { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
-  .footer-brand-logo img { height:56px; width:56px; border-radius:50%; object-fit:cover; }
-  .footer-brand-name { font-family:'Sora',sans-serif; font-weight:800; font-size:1.1rem; color:var(--white); }
-  .footer-brand-name span { display:block; font-size:.68rem; font-weight:400; color:rgba(255,255,255,.4); }
-  .footer-brand p { font-size:.83rem; color:rgba(255,255,255,.4); line-height:1.7; max-width:260px; }
-  .footer-contacts { margin-top:18px; display:flex; flex-direction:column; gap:8px; }
-  .footer-contacts a { font-size:.83rem; color:rgba(255,255,255,.55); text-decoration:none; display:flex; align-items:center; gap:8px; transition:color .2s; }
-  .footer-contacts a:hover { color:var(--white); }
-  .footer-contacts a.wa { color:#25D366; font-weight:600; }
-  .f-col h4 { font-family:'Sora',sans-serif; font-size:.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:18px; }
-  .f-col ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
-  .f-col a { font-size:.84rem; color:rgba(255,255,255,.5); text-decoration:none; transition:color .2s; }
-  .f-col a:hover { color:var(--white); }
-  .crm-btn-footer {
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--accent); color:var(--white) !important;
-    padding:12px 18px; border-radius:8px;
-    font-weight:600 !important; font-size:.83rem !important; margin-bottom:10px; transition:background .2s;
-  }
-  .crm-btn-footer:hover { background:#c23416 !important; }
-  .footer-bottom {
-    border-top:1px solid rgba(255,255,255,.07);
-    padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
-  }
-  .footer-bottom p { font-size:.79rem; color:rgba(255,255,255,.35); }
-  .f-legal { display:flex; gap:18px; flex-wrap:wrap; }
-  .f-legal a { font-size:.75rem; color:rgba(255,255,255,.3); text-decoration:none; transition:color .2s; }
-  .f-legal a:hover { color:rgba(255,255,255,.65); }
+/* ─────────────── TESTIMONIALS ─────────────── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;}
+.testi-card{background:#fff;border-radius:18px;padding:32px;border:1px solid var(--border);transition:all .3s;display:flex;flex-direction:column;gap:16px;}
+.testi-card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,0,0,.08);}
+.testi-stars{color:var(--gold);font-size:.95rem;letter-spacing:2px;}
+.testi-text{font-size:.86rem;color:var(--gray);line-height:1.78;font-style:italic;flex:1;}
+.testi-sep{border:none;border-top:1px solid var(--border);}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.testi-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:.78rem;color:#fff;flex-shrink:0;}
+.testi-name{font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;color:var(--navy);}
+.testi-role{font-size:.72rem;color:var(--gray);margin-top:2px;}
 
-  /* ─── SOCIAL ICONS ─── */
-  .social-icons { display:flex; align-items:center; gap:8px; }
-  .soc {
-    width:30px; height:30px; border-radius:7px;
-    display:flex; align-items:center; justify-content:center;
-    text-decoration:none; transition:transform .2s, opacity .2s;
-    opacity:.75;
-  }
-  .soc:hover { transform:scale(1.15); opacity:1; }
-  .soc-fb  { background:#1877F2; }
-  .soc-ig  { background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
-  .soc-tt  { background:#000; }
-  .soc svg { width:15px; height:15px; fill:#fff; }
+/* ─────────────── FAQ ─────────────── */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 56px;margin-top:48px;}
+.faq-col{display:flex;flex-direction:column;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{width:100%;background:none;border:none;padding:20px 0;text-align:left;font-family:'Sora',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s;line-height:1.4;}
+.faq-q:hover{color:var(--accent);}
+.faq-icon{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:300;color:var(--gray);transition:all .28s;flex-shrink:0;line-height:1;}
+.faq-item.open .faq-icon{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(45deg);}
+.faq-item.open .faq-q{color:var(--accent);}
+.faq-a{display:none;padding:0 0 20px;font-size:.84rem;color:var(--gray);line-height:1.78;}
+.faq-a a{color:var(--accent);font-weight:600;text-decoration:none;}
+.faq-a a:hover{text-decoration:underline;}
+.faq-item.open .faq-a{display:block;}
 
-  /* footer social row */
-  .footer-social { display:flex; gap:10px; margin-top:20px; }
-  .fsoc {
-    width:38px; height:38px; border-radius:9px;
-    display:flex; align-items:center; justify-content:center;
-    text-decoration:none; transition:transform .2s, opacity .2s;
-    opacity:.7;
-  }
-  .fsoc:hover { transform:translateY(-3px); opacity:1; }
-  .fsoc-fb  { background:#1877F2; }
-  .fsoc-ig  { background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
-  .fsoc-tt  { background:#111; border:1px solid rgba(255,255,255,.15); }
-  .fsoc svg { width:18px; height:18px; fill:#fff; }
+/* ─────────────── CONTACT FORM ─────────────── */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.45fr;gap:72px;align-items:start;}
+.contact-info-list{display:flex;flex-direction:column;gap:18px;margin-top:32px;}
+.ci-item{display:flex;align-items:flex-start;gap:14px;}
+.ci-icon{width:40px;height:40px;border-radius:10px;background:var(--light);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:2px;}
+.ci-label{font-size:.66rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.ci-val{font-size:.88rem;color:var(--navy);font-weight:500;margin-top:3px;}
+.ci-val a{color:inherit;text-decoration:none;}
+.cf-card{background:#fff;border-radius:20px;padding:36px;box-shadow:0 8px 40px rgba(0,0,0,.07);border:1px solid var(--border);}
+.cf-tabs{display:flex;gap:8px;margin-bottom:28px;}
+.cf-tab{padding:8px 16px;border-radius:8px;border:1.5px solid var(--border);background:#fff;font-family:'Sora',sans-serif;font-size:.78rem;font-weight:700;color:var(--gray);cursor:pointer;transition:all .2s;letter-spacing:.2px;}
+.cf-tab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.cf-tab:hover:not(.active){border-color:var(--navy);color:var(--navy);}
+.cf-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.cf-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.cf-label{font-size:.73rem;font-weight:700;color:var(--navy);letter-spacing:.4px;}
+.cf-input{padding:12px 14px;border-radius:9px;border:1.5px solid var(--border);font-family:'DM Sans',sans-serif;font-size:.86rem;color:var(--text);background:#fff;transition:border-color .2s,box-shadow .2s;outline:none;width:100%;}
+.cf-input:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,30,61,.07);}
+.cf-select{-webkit-appearance:none;appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+.cf-textarea{resize:vertical;min-height:110px;line-height:1.6;}
+.cf-hidden{display:none;}
+.cf-submit{width:100%;padding:15px;border-radius:10px;border:none;background:var(--navy);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .2s;letter-spacing:.3px;margin-top:4px;}
+.cf-submit:hover{background:var(--accent);transform:translateY(-1px);box-shadow:0 8px 24px rgba(232,64,28,.28);}
+.cf-note{font-size:.72rem;color:var(--gray);text-align:center;margin-top:12px;line-height:1.6;}
 
-  /* ─── WHATSAPP FLOAT ─── */
-  .wa-float {
-    position:fixed; bottom:28px; right:28px; z-index:999;
-    background:#25D366; color:#fff;
-    width:58px; height:58px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 6px 24px rgba(37,211,102,.45);
-    text-decoration:none; transition:transform .2s, box-shadow .2s;
-  }
-  .wa-float:hover { transform:scale(1.1); box-shadow:0 10px 32px rgba(37,211,102,.55); }
-  .wa-float svg { width:27px; height:27px; }
+/* ─────────────── CERT ─────────────── */
+.cert-section{background:var(--navy);padding:72px 80px;text-align:center;}
+.cert-section .s-label{color:var(--gold);}
+.cert-section .s-title{color:#fff;}
+.cert-row{display:flex;justify-content:center;align-items:center;gap:56px;margin-top:48px;flex-wrap:wrap;}
+.cert-badge{display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.6;transition:opacity .2s;}
+.cert-badge:hover{opacity:1;}
+.cert-badge-icon{width:74px;height:74px;border-radius:50%;border:1.5px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--gold);}
+.cert-badge span{font-size:.72rem;color:rgba(255,255,255,.5);letter-spacing:.8px;font-weight:500;}
 
-  /* ─── ANIMATIONS ─── */
-  @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
-  .reveal { opacity:0; transform:translateY(28px); transition:opacity .6s ease, transform .6s ease; }
-  .reveal.visible { opacity:1; transform:translateY(0); }
+/* ─────────────── CTA BAND ─────────────── */
+.cta-band{background:linear-gradient(135deg,var(--accent) 0%,#c23416 100%);display:flex;align-items:center;justify-content:space-between;gap:40px;padding:72px 80px;}
+.cta-band h2{font-family:'Sora',sans-serif;font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:800;color:#fff;line-height:1.2;max-width:460px;letter-spacing:-.5px;}
+.cta-band a{background:#fff;color:var(--accent);padding:15px 36px;border-radius:9px;font-family:'Sora',sans-serif;font-weight:700;font-size:.9rem;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:all .2s;letter-spacing:.3px;}
+.cta-band a:hover{background:var(--navy);color:#fff;}
 
-  /* ─── MOBILE ─── */
-  @media (max-width:900px) {
-    nav { padding:0 16px; }
-    .nav-links { display:none; }
-    .hero-content { padding:0 24px; }
-    .hero-stats { display:none; }
-    .slide-dots { left:24px; bottom:20px; }
-    .slide-arrows { right:20px; bottom:14px; }
-    section { padding:56px 20px; }
-    .mvv-grid, .svc-grid { grid-template-columns:1fr; }
-    .footer-grid { grid-template-columns:1fr 1fr; }
-    .cta-band { flex-direction:column; padding:52px 24px; text-align:center; }
-    .recruit { flex-direction:column; gap:14px; padding:18px 20px; text-align:center; }
-    .gallery-strip { height:200px; }
-    .topbar { padding:7px 16px; font-size:.7rem; }
+/* ─────────────── FOOTER ─────────────── */
+footer{background:var(--navy);padding:64px 80px 36px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:48px;margin-bottom:48px;}
+.fb-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.fb-logo img{height:52px;width:52px;border-radius:50%;object-fit:cover;}
+.fb-name{font-family:'Sora',sans-serif;font-weight:800;font-size:1rem;color:#fff;}
+.fb-name span{display:block;font-size:.62rem;font-weight:500;color:rgba(255,255,255,.38);letter-spacing:.6px;text-transform:uppercase;margin-top:2px;}
+.fb-desc{font-size:.82rem;color:rgba(255,255,255,.38);line-height:1.72;max-width:260px;}
+.fb-contacts{margin-top:18px;display:flex;flex-direction:column;gap:9px;}
+.fb-contacts a{font-size:.82rem;color:rgba(255,255,255,.5);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s;}
+.fb-contacts a:hover{color:#fff;}
+.fb-contacts a.wa{color:#25D366;font-weight:600;}
+.fsoc-row{display:flex;gap:8px;margin-top:20px;}
+.fsoc{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.65;transition:all .2s;}
+.fsoc:hover{opacity:1;transform:translateY(-2px);}
+.fsoc svg{width:16px;height:16px;fill:#fff;}
+.fsoc-fb{background:#1877F2;}.fsoc-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}.fsoc-tt{background:#111;border:1px solid rgba(255,255,255,.12);}
+.f-col h4{font-family:'Sora',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:18px;}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.f-col ul a{font-size:.82rem;color:rgba(255,255,255,.46);text-decoration:none;transition:color .2s;}
+.f-col ul a:hover{color:#fff;}
+.btn-f-sim{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#f59e0b,#f97316);color:#fff;padding:12px 16px;border-radius:8px;font-family:'Sora',sans-serif;font-weight:700;font-size:.8rem;margin-bottom:8px;text-decoration:none;transition:all .2s;letter-spacing:.2px;}
+.btn-f-sim:hover{filter:brightness(1.08);transform:translateY(-1px);}
+.btn-f-crm{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:12px 16px;border-radius:8px;font-family:'Sora',sans-serif;font-weight:700;font-size:.8rem;text-decoration:none;transition:background .2s;letter-spacing:.2px;}
+.btn-f-crm:hover{background:#c23416;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:.76rem;color:rgba(255,255,255,.3);}
+.f-legal{display:flex;gap:18px;flex-wrap:wrap;}
+.f-legal a{font-size:.72rem;color:rgba(255,255,255,.28);text-decoration:none;transition:color .2s;}
+.f-legal a:hover{color:rgba(255,255,255,.6);}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;background:#25D366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.42);text-decoration:none;transition:transform .2s,box-shadow .2s;}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,.52);}
+.wa-float svg{width:26px;height:26px;fill:#fff;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ════ RESPONSIVE ════ */
+@media(max-width:1200px){
+  .telecom-grid{grid-template-columns:repeat(3,1fr);}
+  .dd-energy{min-width:460px;}
+}
+@media(max-width:1024px){
+  nav,section,.brands-section,.cert-section,.sim-banner,.recruit,.cta-band,footer{padding-left:40px;padding-right:40px;}
+  .hero-content{padding:0 48px;}
+  .slide-dots{left:48px;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px;}
+  .svc-grid{grid-template-columns:repeat(2,1fr);}
+  .mvv-grid{gap:18px;}
+  .contact-wrap{grid-template-columns:1fr;gap:40px;}
+  .faq-grid{gap:0 36px;}
+  .testi-grid{gap:16px;}
+}
+@media(max-width:768px){
+  .topbar{padding:7px 20px;justify-content:space-between;gap:10px;}
+  .topbar-email,.topbar-contactos{display:none;}
+  nav{padding:0 20px;height:62px;}
+  .nav-logo img{height:42px;width:42px;}
+  .nav-logo-text{font-size:.9rem;}
+  .nav-logo-text span{font-size:.6rem;}
+  .hamburger{display:flex;}
+  .nav-links{
+    display:flex !important;flex-direction:column;
+    position:fixed;top:0;right:-100%;
+    width:min(82vw,300px);height:100dvh;
+    background:#fff;box-shadow:-8px 0 48px rgba(0,0,0,.16);
+    padding:76px 24px 40px;gap:0;
+    transition:right .35s cubic-bezier(.4,0,.2,1);
+    z-index:300;overflow-y:auto;overscroll-behavior:contain;
   }
+  .nav-links.open{right:0;}
+  .nav-links > li{border-bottom:1px solid var(--border);}
+  .nav-links > li > a{display:flex;align-items:center;padding:16px 0;font-size:.94rem;min-height:52px;border-radius:0;}
+  .nav-links > li > a:hover{background:none;color:var(--accent);}
+  .nav-links > li:last-child,.nav-links > li:nth-last-child(2){border-bottom:none;padding-top:10px;}
+  .btn-sim-nav,.btn-crm{display:flex;justify-content:center;padding:14px 20px;font-size:.88rem;border-radius:8px;width:100%;}
+  .dd-panel{display:none !important;}
+  .chev{display:none !important;}
+  .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:299;backdrop-filter:blur(3px);}
+  .nav-overlay.show{display:block;}
+  /* Hero */
+  .hero{height:100svh;min-height:520px;}
+  .hero-content{padding:80px 20px 90px;max-width:100%;justify-content:flex-end;}
+  .hero-tag{font-size:.66rem;padding:5px 13px;margin-bottom:18px;}
+  .slide-title{font-size:clamp(1.6rem,6.5vw,2.4rem);letter-spacing:-.8px;margin-bottom:16px;}
+  .hero-sub{font-size:.86rem;margin-bottom:24px;max-width:100%;}
+  .hero-ctas{gap:10px;}
+  .btn-p,.btn-o,.btn-sim-h{padding:12px 20px;font-size:.84rem;}
+  .hero-stats{display:none;}
+  .hero-stats-mob{display:flex !important;background:var(--navy);border-top:1px solid rgba(255,255,255,.07);overflow-x:auto;scrollbar-width:none;}
+  .hero-stats-mob::-webkit-scrollbar{display:none;}
+  .hero-stats-mob .stat{padding:14px 20px;min-width:130px;flex-shrink:0;}
+  .hero-stats-mob .stat-num{font-size:1.4rem;}
+  .hero-stats-mob .stat-lbl{font-size:.67rem;}
+  .slide-dots{left:20px;bottom:18px;}
+  .slide-arrows{right:16px;bottom:14px;}
+  .arrow{width:38px;height:38px;font-size:.95rem;}
+  .dot{width:7px;height:7px;}.dot.active{width:22px;}
+  /* Sections */
+  section,.brands-section,.cert-section{padding:52px 20px;}
+  .sim-banner{padding:36px 20px;}
+  .sb-inner{flex-direction:column;gap:28px;text-align:center;}
+  .sim-banner p{max-width:100%;}
+  .sb-feats{justify-content:center;}
+  .btn-sim-main{width:100%;justify-content:center;padding:15px 28px;}
+  .recruit{flex-direction:column;gap:12px;padding:18px 20px;text-align:center;}
+  .recruit a{align-self:center;}
+  .s-title{font-size:1.65rem;}
+  .mvv-grid{grid-template-columns:1fr;gap:14px;margin-top:32px;}
+  .mvv-card{padding:26px 22px;}
+  .gallery-strip{height:auto;flex-direction:column;}
+  .gallery-strip img{flex:none;width:100%;height:160px;}
+  .gallery-strip img:nth-child(n+3){display:none;}
+  .telecom-grid{grid-template-columns:1fr 1fr;gap:12px;}
+  .brand-card{padding:22px 12px 18px;}
+  .brand-logo{width:54px;height:54px;border-radius:12px;}
+  .brand-card-name{font-size:.88rem;}
+  .brand-desc{font-size:.73rem;}
+  .energy-cols{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr 1fr;gap:10px;margin-top:32px;}
+  .svc-card{padding:18px 14px;gap:9px;}
+  .svc-icon{font-size:1.3rem;}.svc-name{font-size:.82rem;}.svc-text{font-size:.76rem;}
+  .testi-grid{grid-template-columns:1fr;gap:14px;}
+  .faq-grid{grid-template-columns:1fr;gap:0;}
+  .faq-q{font-size:.85rem;}
+  .contact-wrap{grid-template-columns:1fr;gap:36px;}
+  .cf-card{padding:24px 20px;}
+  .cf-tabs{flex-wrap:wrap;}
+  .cf-tab{font-size:.75rem;padding:7px 13px;}
+  .cf-row2{grid-template-columns:1fr;}
+  .cert-section{padding:52px 20px;}
+  .cert-row{gap:24px;margin-top:36px;}
+  .cert-badge-icon{width:62px;height:62px;font-size:1.4rem;}
+  .cta-band{flex-direction:column;padding:48px 20px;text-align:center;gap:20px;}
+  .cta-band h2{font-size:1.4rem;max-width:100%;}
+  .cta-band a{align-self:center;}
+  footer{padding:44px 20px 100px;}
+  .footer-grid{grid-template-columns:1fr;gap:32px;margin-bottom:36px;}
+  .fb-desc{max-width:100%;}
+  .footer-cols-row{display:grid !important;grid-template-columns:1fr 1fr;gap:28px;}
+  .btn-f-sim,.btn-f-crm{width:100%;justify-content:center;padding:13px 16px;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px;padding-top:20px;}
+  .wa-float{bottom:calc(env(safe-area-inset-bottom,0px) + 20px);right:16px;width:52px;height:52px;}
+  .wa-float svg{width:23px;height:23px;}
+}
+@media(max-width:400px){
+  .telecom-grid{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+  .slide-title{font-size:1.5rem;}
+  .hero-content{padding:70px 16px 80px;}
+  .btn-p,.btn-o,.btn-sim-h{width:100%;justify-content:center;}
+  .hero-ctas{flex-direction:column;}
+  section,.brands-section,.cert-section{padding:44px 16px;}
+  footer{padding:40px 16px 90px;}
+  .cta-band{padding:40px 16px;}
+  .footer-cols-row{grid-template-columns:1fr !important;}
+}
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
+<!-- ══ TOPBAR ══ -->
 <div class="topbar">
-  <a href="mailto:parcerias@solucoesdiferentes.pt">parcerias@solucoesdiferentes.pt</a>
+  <a class="topbar-email" href="/cdn-cgi/l/email-protection#f79e999198b784989b8294989284939e9192859299839284d98783"><span class="__cf_email__" data-cfemail="86efe8e0e9c6f5e9eaf3e5e9e3f5e2efe0e3f4e3e8f2e3f5a8f6f2">[email&#160;protected]</span></a>
   <a class="wa-pill" href="https://wa.me/351915006353" target="_blank" rel="noopener">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
     915 006 353
   </a>
-  <a href="#contactos">Contactos</a>
+  <a class="topbar-contactos" href="#contacto">Contactos</a>
   <div class="social-icons">
-    <a class="soc soc-fb" href="https://www.facebook.com/jose.magalhaes.5" target="_blank" rel="noopener" title="Facebook">
-      <svg viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
-    </a>
-    <a class="soc soc-ig" href="https://www.instagram.com/stories/jose.magalhaes.35/" target="_blank" rel="noopener" title="Instagram">
-      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    </a>
-    <a class="soc soc-tt" href="https://www.tiktok.com/@josemagalhaes084" target="_blank" rel="noopener" title="TikTok">
-      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
-    </a>
+    <a class="soc soc-fb" href="https://www.facebook.com/jose.magalhaes.5" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg></a>
+    <a class="soc soc-ig" href="https://www.instagram.com/stories/jose.magalhaes.35/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    <a class="soc soc-tt" href="https://www.tiktok.com/@josemagalhaes084" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
   </div>
 </div>
 
-<!-- NAV -->
-<nav id="mainNav">
+<!-- ══ NAV ══ -->
+<div class="nav-overlay" id="navOverlay"></div>
+<nav>
   <a class="nav-logo" href="#">
-    <img src="./logo.jpg" alt="Soluções Diferentes Logo">
-    <div class="nav-logo-text">
-      Soluções Diferentes
-      <span>Telecomunicações &amp; Energia</span>
-    </div>
+    <img src="./logo.jpg" alt="Soluções Diferentes">
+    <div class="nav-logo-text">Soluções Diferentes<span>Telecomunicações &amp; Energia</span></div>
   </a>
-  <ul class="nav-links">
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#quem-somos">Quem Somos</a></li>
+
+    <!-- TELECOMUNICAÇÕES — hover preview, click vai para secção -->
+    <li class="nav-dd">
+      <a href="#telecomunicacoes">
+        Telecomunicações
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+      <div class="dd-panel">
+        <div class="dd-head">Operadores Parceiros</div>
+        <div class="dd-brands">
+          <a class="bchip bchip-meo" href="#telecomunicacoes"><div class="bdot d-meo">MEO</div><div><div class="bchip-name">MEO</div><div class="bchip-sub">Fibra &amp; TV</div></div></a>
+          <a class="bchip bchip-nos" href="#telecomunicacoes"><div class="bdot d-nos">NOS</div><div><div class="bchip-name">NOS</div><div class="bchip-sub">Internet &amp; TV</div></div></a>
+          <a class="bchip bchip-voda" href="#telecomunicacoes"><div class="bdot d-voda" style="font-size:.54rem;line-height:1.2;">VODA<br>FONE</div><div><div class="bchip-name">Vodafone</div><div class="bchip-sub">5G &amp; Fibra</div></div></a>
+          <a class="bchip bchip-digi" href="#telecomunicacoes"><div class="bdot d-digi" style="color:#111;">DIGI</div><div><div class="bchip-name">DIGI</div><div class="bchip-sub">Low-cost Fibra</div></div></a>
+          <a class="bchip bchip-nowo" href="#telecomunicacoes" style="grid-column:span 2;"><div class="bdot d-nowo">NOWO</div><div><div class="bchip-name">NOWO</div><div class="bchip-sub">Internet por Cabo</div></div></a>
+        </div>
+        <a class="dd-cta" href="#telecomunicacoes">Ver todos os operadores &#8594;</a>
+      </div>
+    </li>
+
+    <!-- ENERGIAS — hover preview, click vai para secção -->
+    <li class="nav-dd">
+      <a href="#energia">
+        Energias
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+      <div class="dd-panel">
+        <div class="dd-head">Parceiros de Energia</div>
+        <div class="dd-energy">
+          <div class="dd-ecol">
+            <div class="dd-ecol-title">&#9728; Solar</div>
+            <div class="dd-ecol-list">
+              <a class="bchip bchip-edp" href="#energia"><div class="bdot d-edp">EDP</div><div><div class="bchip-name">EDP Solar</div></div></a>
+              <a class="bchip bchip-galp" href="#energia"><div class="bdot d-galp">GALP</div><div><div class="bchip-name">Galp Solar</div></div></a>
+              <a class="bchip bchip-iber" href="#energia"><div class="bdot d-iber" style="font-size:.52rem;line-height:1.2;">IBER<br>DROLA</div><div><div class="bchip-name">Iberdrola Solar</div></div></a>
+            </div>
+          </div>
+          <div class="dd-ecol">
+            <div class="dd-ecol-title">&#127968; Residencial</div>
+            <div class="dd-ecol-list">
+              <a class="bchip bchip-endesa" href="#energia"><div class="bdot d-endesa" style="font-size:.54rem;line-height:1.2;">END<br>ESA</div><div><div class="bchip-name">Endesa</div></div></a>
+              <a class="bchip bchip-iber" href="#energia"><div class="bdot d-iber" style="font-size:.52rem;line-height:1.2;">IBER<br>DROLA</div><div><div class="bchip-name">Iberdrola</div></div></a>
+              <a class="bchip bchip-galp" href="#energia"><div class="bdot d-galp">GALP</div><div><div class="bchip-name">Galp</div></div></a>
+              <a class="bchip bchip-repsol" href="#energia"><div class="bdot d-repsol" style="color:#333;font-size:.54rem;line-height:1.2;">REP<br>SOL</div><div><div class="bchip-name">Repsol</div></div></a>
+            </div>
+          </div>
+          <div class="dd-ecol">
+            <div class="dd-ecol-title">&#127970; Empresarial</div>
+            <div class="dd-ecol-list">
+              <a class="bchip bchip-porto" href="#energia"><div class="bdot d-porto" style="font-size:.5rem;line-height:1.2;">PORT<br>ULOGUS</div><div><div class="bchip-name">Portulogus</div></div></a>
+              <a class="bchip bchip-edp" href="#energia"><div class="bdot d-edp">EDP</div><div><div class="bchip-name">EDP Empresarial</div></div></a>
+              <a class="bchip bchip-iber" href="#energia"><div class="bdot d-iber" style="font-size:.52rem;line-height:1.2;">IBER<br>DROLA</div><div><div class="bchip-name">Iberdrola Emp.</div></div></a>
+              <a class="bchip bchip-endesa" href="#energia"><div class="bdot d-endesa" style="font-size:.54rem;line-height:1.2;">END<br>ESA</div><div><div class="bchip-name">Endesa Emp.</div></div></a>
+            </div>
+          </div>
+        </div>
+        <a class="dd-cta" href="#energia">Ver todos os parceiros de energia &#8594;</a>
+      </div>
+    </li>
+
     <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#insights">Insights</a></li>
     <li><a href="#recrutamento">Recrutamento</a></li>
+    <li><a class="btn-sim-nav" href="https://solucoesdiferentes-simulador-energi.vercel.app/" target="_blank" rel="noopener">&#9889; Simular Energia</a></li>
     <li>
       <a class="btn-crm" href="https://v0-crm-web-app-snowy.vercel.app/login" target="_blank" rel="noopener">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        CRM Parceiros
+        CRM
       </a>
     </li>
   </ul>
 </nav>
 
-<!-- HERO SLIDESHOW -->
+<!-- ══ HERO ══ -->
 <div class="hero" id="hero">
-
-  <div class="slide slide-1 active">
+  <div class="slide sl1 active">
     <div class="hero-content">
-      <div class="hero-tag">🌐 Telecomunicações &amp; Energia</div>
+      <div class="hero-tag">Telecomunicações &amp; Energia</div>
       <h2 class="slide-title">Conectamos pessoas,<br>elevamos <em>resultados</em></h2>
-      <p class="hero-sub">Soluções personalizadas de contact center para impulsionar o crescimento do seu negócio em Portugal.</p>
+      <p class="hero-sub">Parceiros certificados MEO, NOS, Vodafone, DIGI, NOWO, EDP, Galp, Iberdrola, Endesa e Repsol. A melhor solução para o seu perfil.</p>
       <div class="hero-ctas">
-        <a class="btn-primary" href="#servicos">Ver Serviços →</a>
-        <a class="btn-outline" href="https://wa.me/351915006353" target="_blank">💬 WhatsApp</a>
+        <a class="btn-p" href="#telecomunicacoes">Ver Operadores &#8594;</a>
+        <a class="btn-sim-h" href="https://solucoesdiferentes-simulador-energi.vercel.app/" target="_blank" rel="noopener">&#9889; Simular Poupança</a>
+        <a class="btn-o" href="https://wa.me/351915006353" target="_blank">WhatsApp</a>
       </div>
     </div>
   </div>
-
-  <div class="slide slide-2">
+  <div class="slide sl2">
     <div class="hero-content">
-      <div class="hero-tag">☀️ Energia Solar</div>
+      <div class="hero-tag">Energia Solar</div>
       <h2 class="slide-title">Energia limpa para<br>um futuro <em>sustentável</em></h2>
-      <p class="hero-sub">Instalação e manutenção de painéis fotovoltaicos para particulares e empresas em todo o território nacional.</p>
+      <p class="hero-sub">Parceiros EDP, Galp e Iberdrola para instalação e manutenção de painéis fotovoltaicos em todo o território nacional.</p>
       <div class="hero-ctas">
-        <a class="btn-primary" href="#servicos">Saiba Mais →</a>
-        <a class="btn-outline" href="mailto:parcerias@solucoesdiferentes.pt">Pedir Proposta</a>
+        <a class="btn-p" href="#energia">Ver Parceiros de Energia &#8594;</a>
+        <a class="btn-sim-h" href="https://solucoesdiferentes-simulador-energi.vercel.app/" target="_blank" rel="noopener">&#9889; Simular Poupança</a>
       </div>
     </div>
   </div>
-
-  <div class="slide slide-3">
+  <div class="slide sl3">
     <div class="hero-content">
-      <div class="hero-tag">💨 Energia Eólica</div>
-      <h2 class="slide-title">Lideramos a<br><span class="cyan">transição</span> energética</h2>
-      <p class="hero-sub">Soluções de energia renovável que reduzem custos e aumentam a sustentabilidade do seu negócio.</p>
+      <div class="hero-tag">Energia Eólica</div>
+      <h2 class="slide-title">Lideramos a<br><span class="cy">transição</span> energética</h2>
+      <p class="hero-sub">Iberdrola, EDP e Endesa para empresas que pretendem reduzir custos operacionais através de energia renovável.</p>
       <div class="hero-ctas">
-        <a class="btn-primary" href="#servicos">Explorar →</a>
-        <a class="btn-outline" href="#contactos">Contactar</a>
+        <a class="btn-p" href="#energia">Parceiros de Energia &#8594;</a>
+        <a class="btn-sim-h" href="https://solucoesdiferentes-simulador-energi.vercel.app/" target="_blank" rel="noopener">&#9889; Simular Poupança</a>
       </div>
     </div>
   </div>
-
-  <div class="slide slide-4">
+  <div class="slide sl4">
     <div class="hero-content">
-      <div class="hero-tag">📞 Contact Center</div>
+      <div class="hero-tag">Contact Center</div>
       <h2 class="slide-title">A sua equipa de<br>excelência <em>operacional</em></h2>
-      <p class="hero-sub">Operações de atendimento, vendas, suporte técnico e backoffice com os mais altos padrões de qualidade.</p>
+      <p class="hero-sub">Atendimento ao cliente, vendas, suporte técnico e backoffice com elevados padrões de qualidade e produtividade.</p>
       <div class="hero-ctas">
-        <a class="btn-primary" href="#servicos">Os Nossos Serviços →</a>
-        <a class="btn-outline" href="https://v0-crm-web-app-snowy.vercel.app/login" target="_blank">Aceder CRM</a>
+        <a class="btn-p" href="#servicos">Conhecer os Serviços &#8594;</a>
+        <a class="btn-o" href="https://v0-crm-web-app-snowy.vercel.app/login" target="_blank">Aceder ao CRM</a>
       </div>
     </div>
   </div>
-
-  <div class="slide slide-5">
+  <div class="slide sl5">
     <div class="hero-content">
-      <div class="hero-tag">🛰️ Conectividade Total</div>
+      <div class="hero-tag">Conectividade Total</div>
       <h2 class="slide-title">Fibra, móvel e<br><em>muito mais</em></h2>
-      <p class="hero-sub">Cobertura total de telecomunicações para que nenhum cliente fique sem ligação. Soluções B2B e B2C.</p>
+      <p class="hero-sub">MEO, NOS, Vodafone, DIGI e NOWO. Cobertura nacional completa para particulares e empresas.</p>
       <div class="hero-ctas">
-        <a class="btn-primary" href="#servicos">Descobrir →</a>
-        <a class="btn-outline" href="https://wa.me/351915006353" target="_blank">Falar Connosco</a>
+        <a class="btn-p" href="#telecomunicacoes">Ver Operadores &#8594;</a>
+        <a class="btn-o" href="https://wa.me/351915006353" target="_blank">Falar Connosco</a>
       </div>
     </div>
   </div>
-
-  <!-- Stats bar -->
   <div class="hero-stats">
     <div class="stat"><div class="stat-num">+200<span>k</span></div><div class="stat-lbl">Interações mensais</div></div>
-    <div class="stat"><div class="stat-num">98<span>%</span></div><div class="stat-lbl">Satisfação de parceiros</div></div>
+    <div class="stat"><div class="stat-num">98<span>%</span></div><div class="stat-lbl">Satisfação de clientes</div></div>
     <div class="stat"><div class="stat-num">+50</div><div class="stat-lbl">Clientes ativos</div></div>
     <div class="stat"><div class="stat-num">15<span>+</span></div><div class="stat-lbl">Anos de experiência</div></div>
   </div>
-
-  <!-- Dots -->
   <div class="slide-dots">
-    <div class="dot active" data-i="0"></div>
-    <div class="dot" data-i="1"></div>
-    <div class="dot" data-i="2"></div>
-    <div class="dot" data-i="3"></div>
-    <div class="dot" data-i="4"></div>
+    <div class="dot active" data-i="0"></div><div class="dot" data-i="1"></div>
+    <div class="dot" data-i="2"></div><div class="dot" data-i="3"></div><div class="dot" data-i="4"></div>
   </div>
-
-  <!-- Arrows -->
   <div class="slide-arrows">
     <div class="arrow" id="prevSlide">&#8592;</div>
     <div class="arrow" id="nextSlide">&#8594;</div>
   </div>
 </div>
-
-<!-- RECRUIT BANNER -->
-<div class="recruit" id="recrutamento">
-  <p>🚀 Junte-se a nós! Estamos a recrutar novos talentos em telecomunicações e energia.</p>
-  <a href="mailto:parcerias@solucoesdiferentes.pt">Let's GO!</a>
+<div class="hero-stats-mob" style="display:none;">
+  <div class="stat"><div class="stat-num">+200<span style="color:var(--gold)">k</span></div><div class="stat-lbl">Interações mensais</div></div>
+  <div class="stat"><div class="stat-num">98<span style="color:var(--gold)">%</span></div><div class="stat-lbl">Satisfação</div></div>
+  <div class="stat"><div class="stat-num">+50</div><div class="stat-lbl">Clientes ativos</div></div>
+  <div class="stat"><div class="stat-num">15<span style="color:var(--gold)">+</span></div><div class="stat-lbl">Anos</div></div>
 </div>
 
-<!-- MVV -->
+<!-- ══ SIM BANNER ══ -->
+<div class="sim-banner">
+  <div class="sb-inner">
+    <div class="sb-left">
+      <div class="sb-pill">Gratuito &middot; Sem compromisso &middot; Resultados imediatos</div>
+      <h2>Calcule quanto pode <em>poupar na sua fatura de energia</em></h2>
+      <p>Simulador com tarifas reais EDP, Galp, Iberdrola, Endesa e Repsol. Sem necessidade de dados pessoais.</p>
+      <div class="sb-feats">
+        <div class="sb-feat"><span>&#10003;</span> Cálculo instantâneo</div>
+        <div class="sb-feat"><span>&#10003;</span> Comparação de tarifas</div>
+        <div class="sb-feat"><span>&#10003;</span> 100% gratuito</div>
+        <div class="sb-feat"><span>&#10003;</span> Confidencial</div>
+      </div>
+    </div>
+    <div>
+      <a class="btn-sim-main" href="https://solucoesdiferentes-simulador-energi.vercel.app/" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Iniciar Simulador
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ RECRUIT ══ -->
+<div class="recruit" id="recrutamento">
+  <p>Estamos a recrutar! Junte-se a uma equipa dinâmica em telecomunicações e energia.</p>
+  <a href="/cdn-cgi/l/email-protection#a5d7c0c6d7d0d1c4c8c0cbd1cae5d6cac9d0c6cac0d6c1ccc3c0d7c0cbd1c0d68bd5d1">Candidatar-se</a>
+</div>
+
+<!-- ══ QUEM SOMOS ══ -->
 <section class="mvv" id="quem-somos">
   <div class="inner">
-    <p class="s-tag">Estamos ligados · We are connected</p>
+    <p class="s-label">Sobre nós</p>
     <h2 class="s-title">A nossa <em>essência</em></h2>
     <div class="mvv-grid">
       <div class="mvv-card reveal">
-        <div class="mvv-icon">🎯</div>
+        <div class="mvv-icon">&#127919;</div>
         <h3>Missão</h3>
-        <p>Oferecer soluções de contact center, telecomunicações e energia que impulsionam o crescimento dos parceiros, com qualidade e excelência no atendimento.</p>
+        <p>Oferecer soluções de contact center, telecomunicações e energia que impulsionam o crescimento dos nossos parceiros, com foco na qualidade e excelência do serviço prestado.</p>
       </div>
       <div class="mvv-card reveal">
-        <div class="mvv-icon">🔭</div>
+        <div class="mvv-icon">&#128301;</div>
         <h3>Visão</h3>
-        <p>Ser referência nacional em soluções integradas de telecomunicações, energia e contact center, reconhecida pela inovação e compromisso com os parceiros.</p>
+        <p>Consolidar a posição como referência nacional em soluções integradas de telecomunicações e energia, reconhecida pela inovação, rigor e compromisso com cada parceiro.</p>
       </div>
       <div class="mvv-card reveal">
-        <div class="mvv-icon">⭐</div>
+        <div class="mvv-icon">&#11088;</div>
         <h3>Valores</h3>
-        <p>Ética, respeito, excelência e compromisso guiam todas as relações com clientes, colaboradores e parceiros estratégicos em Portugal e além-fronteiras.</p>
+        <p>Ética, respeito, excelência operacional e compromisso orientam todas as relações com clientes, colaboradores e parceiros estratégicos, em Portugal e além-fronteiras.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY STRIP -->
+<!-- GALLERY -->
 <div class="gallery-strip">
-  <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop" alt="Fibra Ótica">
-  <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&auto=format&fit=crop" alt="Energia Solar">
-  <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&auto=format&fit=crop" alt="Energia Eólica">
-  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop" alt="Tecnologia">
-  <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop" alt="Edifícios Portugal">
+  <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&auto=format&fit=crop" alt="Fibra Ótica">
+  <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&auto=format&fit=crop" alt="Energia Solar">
+  <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=700&auto=format&fit=crop" alt="Energia Eólica">
+  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&auto=format&fit=crop" alt="Tecnologia">
+  <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&auto=format&fit=crop" alt="Escritórios">
 </div>
 
-<!-- SERVICES -->
+<!-- ══ TELECOMUNICAÇÕES ══ -->
+<div class="brands-section" id="telecomunicacoes">
+  <div class="inner">
+    <p class="s-label">Operadores Parceiros</p>
+    <h2 class="s-title">As nossas marcas de <em>Telecomunicações</em></h2>
+    <p class="s-sub">Parceiros certificados dos principais operadores em Portugal. Analisamos o seu perfil e apresentamos a oferta mais vantajosa — sem custos de consultoria.</p>
+    <div class="telecom-grid">
+
+      <div class="brand-card bc-meo-c reveal">
+        <div class="brand-logo d-meo">MEO</div>
+        <div class="brand-card-name">MEO</div>
+        <div class="brand-desc">Fibra ótica de alta velocidade, televisão, internet móvel e serviços de voz. Maior operador nacional com cobertura total em Portugal continental e ilhas.</div>
+        <span class="brand-pill" style="background:rgba(255,98,0,.09);color:#FF6200;">Fibra &middot; TV &middot; Móvel</span>
+      </div>
+
+      <div class="brand-card bc-nos-c reveal">
+        <div class="brand-logo d-nos">NOS</div>
+        <div class="brand-card-name">NOS</div>
+        <div class="brand-desc">Internet de alta velocidade, televisão premium com conteúdos exclusivos, serviços móveis e soluções empresariais integradas.</div>
+        <span class="brand-pill" style="background:rgba(0,61,165,.08);color:#003DA5;">TV &middot; Internet &middot; Empresas</span>
+      </div>
+
+      <div class="brand-card bc-voda-c reveal">
+        <div class="brand-logo d-voda" style="font-size:.7rem;line-height:1.3;text-align:center;">VODA<br>FONE</div>
+        <div class="brand-card-name">Vodafone</div>
+        <div class="brand-desc">Líder em redes 5G com fibra residencial e empresarial. Excelência no serviço de apoio ao cliente e cobertura móvel superior em todo o país.</div>
+        <span class="brand-pill" style="background:rgba(230,0,0,.08);color:#b80000;">5G &middot; Fibra &middot; Empresas</span>
+      </div>
+
+      <div class="brand-card bc-digi-c reveal">
+        <div class="brand-logo d-digi" style="color:#111;">DIGI</div>
+        <div class="brand-card-name">DIGI</div>
+        <div class="brand-desc">Fibra ótica até 10 Gbps com preços altamente competitivos. A alternativa low-cost de qualidade crescente no mercado português de telecomunicações.</div>
+        <span class="brand-pill" style="background:rgba(255,205,0,.12);color:#9a6e00;">Low-cost &middot; Fibra &middot; Veloz</span>
+      </div>
+
+      <div class="brand-card bc-nowo-c reveal">
+        <div class="brand-logo d-nowo">NOWO</div>
+        <div class="brand-card-name">NOWO</div>
+        <div class="brand-desc">Internet por rede de cabo com televisão digital e serviço de voz. Contratos flexíveis, sem período de fidelização obrigatório, para clientes residenciais.</div>
+        <span class="brand-pill" style="background:rgba(255,90,0,.08);color:#FF5A00;">Cabo &middot; TV &middot; Flexível</span>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="https://wa.me/351915006353" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 34px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,.3);transition:all .2s;"
+         onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 30px rgba(37,211,102,.4)'"
+         onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(37,211,102,.3)'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        Pedir aconselhamento gratuito
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ENERGIA ══ -->
+<div class="brands-section alt" id="energia">
+  <div class="inner">
+    <p class="s-label">Parceiros de Energia</p>
+    <h2 class="s-title">As nossas marcas de <em>Energia</em></h2>
+    <p class="s-sub">Trabalhamos com os principais fornecedores de energia em Portugal para oferecer as melhores condições a particulares e empresas.</p>
+    <div class="energy-cols">
+
+      <div>
+        <div class="ecol-title">&#9728; Solar Fotovoltaico</div>
+        <div class="ecol-brands">
+          <div class="ebrand reveal">
+            <div class="edot d-edp">EDP</div>
+            <div><div class="einfo-name">EDP Solar</div><div class="einfo-sub">Instalação e monitorização de sistemas fotovoltaicos</div></div>
+          </div>
+          <div class="ebrand reveal">
+            <div class="edot d-galp">GALP</div>
+            <div><div class="einfo-name">Galp Solar</div><div class="einfo-sub">Soluções solares para casa e empresa</div></div>
+          </div>
+          <div class="ebrand reveal">
+            <div class="edot d-iber" style="font-size:.54rem;line-height:1.3;">IBER<br>DROLA</div>
+            <div><div class="einfo-name">Iberdrola Solar</div><div class="einfo-sub">Energia renovável fotovoltaica</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ecol-title">&#127968; Residencial</div>
+        <div class="ecol-brands">
+          <div class="ebrand reveal">
+            <div class="edot d-endesa" style="font-size:.56rem;line-height:1.3;">END<br>ESA</div>
+            <div><div class="einfo-name">Endesa</div><div class="einfo-sub">Eletricidade e gás natural para habitação</div></div>
+          </div>
+          <div class="ebrand reveal">
+            <div class="edot d-iber" style="font-size:.54rem;line-height:1.3;">IBER<br>DROLA</div>
+            <div><div class="einfo-name">Iberdrola</div><div class="einfo-sub">Eletricidade e gás para particulares</div></div>
+          </div>
+          <div class="ebrand reveal">
+            <div class="edot d-galp">GALP</div>
+            <div><div class="einfo-name">Galp</div><div class="einfo-sub">Gás natural e eletricidade residencial</div></div>
+          </div>
+          <div class="ebrand reveal">
+            <div class="edot d-repsol" style="color:#333;font-size:.56rem;line-height:1.3;">REP<br>SOL</div>
+            <div><div class="einfo-name">Repsol</div><div class="einfo-sub">Energia elétrica e gás para casa</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ecol-title">&#127970; Empresarial</div>
+        <div class="ecol-brands">
+          <div class="ebrand reveal">
+            <div class="edot d-porto" style="font-size:.5rem;line-height:1.3;">PORT<br>ULOGUS</div>
+            <div><div class="einfo-name">Portulogus Empresarial</div><div class="einfo-sub">Soluções de energia para empresas</div></div>
+          </div>
+          <div class="ebrand reveal">
+            <div class="edot d-edp">EDP</div>
+            <div><div class="einfo-name">EDP Empresarial</div><div class="einfo-sub">Eletricidade B2B e mercado livre</div></div>
+          </div>
+          <div class="ebrand reveal">
+            <div class="edot d-iber" style="font-size:.54rem;line-height:1.3;">IBER<br>DROLA</div>
+            <div><div class="einfo-name">Iberdrola Empresarial</div><div class="einfo-sub">Energia renovável para empresas</div></div>
+          </div>
+          <div class="ebrand reveal">
+            <div class="edot d-endesa" style="font-size:.56rem;line-height:1.3;">END<br>ESA</div>
+            <div><div class="einfo-name">Endesa Empresarial</div><div class="einfo-sub">Eletricidade e gás natural B2B</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px;">
+      <a class="btn-sim-main" href="https://solucoesdiferentes-simulador-energi.vercel.app/" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Simular Poupança Agora
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SERVIÇOS ══ -->
 <section id="servicos">
   <div class="inner">
-    <p class="s-tag">O seu sucesso começa aqui</p>
+    <p class="s-label">O que fazemos</p>
     <h2 class="s-title">Os nossos <em>serviços</em></h2>
     <div class="svc-grid">
-      <div class="svc-card reveal"><div class="svc-icon">📞</div><div class="svc-title">Atendimento ao Cliente</div><div class="svc-desc">Atendimento personalizado e consultivo por múltiplos canais para melhorar a experiência do consumidor final.</div></div>
-      <div class="svc-card reveal"><div class="svc-icon">☀️</div><div class="svc-title">Energia Solar Fotovoltaica</div><div class="svc-desc">Instalação, manutenção e monitorização de sistemas solares para particulares, empresas e indústria.</div></div>
-      <div class="svc-card reveal"><div class="svc-icon">📡</div><div class="svc-title">Telecomunicações</div><div class="svc-desc">Soluções de fibra ótica, internet móvel e voz para clientes residenciais e empresariais.</div></div>
-      <div class="svc-card reveal"><div class="svc-icon">💼</div><div class="svc-title">Vendas Outbound & Inbound</div><div class="svc-desc">Especialistas em operações de vendas estruturadas dentro das diretrizes estratégicas dos clientes.</div></div>
-      <div class="svc-card reveal"><div class="svc-icon">💨</div><div class="svc-title">Energia Eólica</div><div class="svc-desc">Consultoria e instalação de soluções eólicas para a transição energética sustentável do seu negócio.</div></div>
-      <div class="svc-card reveal"><div class="svc-icon">🛠️</div><div class="svc-title">Suporte Técnico</div><div class="svc-desc">Profissionais certificados para resolução de problemas técnicos com atendimento ágil e eficiente.</div></div>
-      <div class="svc-card reveal"><div class="svc-icon">🗂️</div><div class="svc-title">Backoffice</div><div class="svc-desc">Processos administrativos e operacionais que garantem eficiência e rigor na gestão do negócio.</div></div>
-      <div class="svc-card reveal"><div class="svc-icon">📱</div><div class="svc-title">Redes Sociais</div><div class="svc-desc">Gestão da comunicação digital alinhada com a identidade da marca e objetivos do cliente.</div></div>
-      <div class="svc-card reveal"><div class="svc-icon">🔄</div><div class="svc-title">BPO – Outsourcing</div><div class="svc-desc">Externalização completa de processos para que os clientes se foquem no seu core business.</div></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#128222;</div><div class="svc-name">Atendimento ao Cliente</div><div class="svc-text">Atendimento consultivo e personalizado por múltiplos canais, orientado para a satisfação e fidelização do consumidor final.</div></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#9728;</div><div class="svc-name">Energia Solar Fotovoltaica</div><div class="svc-text">Instalação, manutenção e monitorização de sistemas solares com os parceiros EDP, Galp e Iberdrola, para particulares e empresas.</div></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#128225;</div><div class="svc-name">Telecomunicações</div><div class="svc-text">Acesso às melhores ofertas de MEO, NOS, Vodafone, DIGI e NOWO. Fibra ótica, internet móvel e pacotes de voz para residencial e empresas.</div></div>
+      <div class="svc-card svc-sim reveal">
+        <div class="svc-icon">&#9889;</div>
+        <div class="svc-name">Simulador de Energia</div>
+        <div class="svc-text">Ferramenta gratuita para calcular a poupança real na fatura de eletricidade e gás. Comparação de tarifas em tempo real.</div>
+        <a class="svc-link" href="https://solucoesdiferentes-simulador-energi.vercel.app/" target="_blank" rel="noopener">Iniciar simulação &#8594;</a>
+      </div>
+      <div class="svc-card reveal"><div class="svc-icon">&#128188;</div><div class="svc-name">Vendas Outbound &amp; Inbound</div><div class="svc-text">Operações de vendas estruturadas e orientadas para resultados, dentro das diretrizes e objetivos estratégicos de cada cliente.</div></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#128168;</div><div class="svc-name">Energia Eólica</div><div class="svc-text">Consultoria e instalação de soluções eólicas para empresas que pretendem iniciar ou acelerar a sua transição energética.</div></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#128295;</div><div class="svc-name">Suporte Técnico</div><div class="svc-text">Equipa certificada para resolução de problemas técnicos com tempos de resposta otimizados e elevada taxa de resolução na primeira chamada.</div></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#128194;</div><div class="svc-name">Backoffice</div><div class="svc-text">Processos administrativos e operacionais que asseguram eficiência, rastreabilidade e rigor na gestão das operações do cliente.</div></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#128260;</div><div class="svc-name">BPO – Outsourcing de Processos</div><div class="svc-text">Externalização completa de processos de negócio, permitindo ao cliente concentrar recursos no seu core business com maior eficiência.</div></div>
     </div>
   </div>
 </section>
 
-<!-- CERTS -->
-<section class="cert">
-  <p class="s-tag">Qualidade · Rigor · Organização</p>
-  <h2 class="s-title" style="color:var(--white)">Certificações que nos distinguem</h2>
-  <div class="cert-row">
-    <div class="cert-badge reveal"><div class="cert-badge-icon">🏅</div><span>APCC</span></div>
-    <div class="cert-badge reveal"><div class="cert-badge-icon">📋</div><span>dGERT</span></div>
-    <div class="cert-badge reveal"><div class="cert-badge-icon">✅</div><span>ISO 9001</span></div>
-    <div class="cert-badge reveal"><div class="cert-badge-icon">🌿</div><span>Política Ambiental</span></div>
+<!-- ══ TESTEMUNHOS ══ -->
+<section class="mvv" id="testemunhos">
+  <div class="inner">
+    <p class="s-label">Casos de sucesso</p>
+    <h2 class="s-title">O que dizem os nossos <em>clientes</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"A Soluções Diferentes ajudou a nossa empresa a reduzir a fatura energética em mais de 30%. O acompanhamento durante todo o processo foi exemplar e sem qualquer complicação."</p>
+        <hr class="testi-sep">
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#FF6200;">JM</div>
+          <div>
+            <div class="testi-name">João Mendes</div>
+            <div class="testi-role">Diretor Geral, PME &mdash; Lisboa</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"Mudámos para a NOS através da equipa da Soluções Diferentes e conseguimos uma poupança de 45&#8364; mensais. Processo simples, comunicação clara e resultado acima do esperado."</p>
+        <hr class="testi-sep">
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#003DA5;">AS</div>
+          <div>
+            <div class="testi-name">Ana Silva</div>
+            <div class="testi-role">Gestora Financeira &mdash; Porto</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"Instalámos painéis solares na nossa empresa com o apoio da Soluções Diferentes. Profissionais, eficientes e com ótimas condições de financiamento. Retorno previsto em menos de 5 anos."</p>
+        <hr class="testi-sep">
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#00A859;">RC</div>
+          <div>
+            <div class="testi-name">Rui Carvalho</div>
+            <div class="testi-role">Administrador &mdash; Braga</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<div class="cta-band" id="contactos">
-  <h2>Vamos conversar sobre o seu projeto?</h2>
-  <a href="mailto:parcerias@solucoesdiferentes.pt">Let's GO! →</a>
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="inner">
+    <p class="s-label">Perguntas frequentes</p>
+    <h2 class="s-title">Esclarecemos as suas <em>dúvidas</em></h2>
+    <div class="faq-grid">
+      <div class="faq-col">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Como funciona a mudança de operador de telecomunicações?<span class="faq-icon">+</span></button>
+          <div class="faq-a">A mudança é realizada sem interrupção de serviço. A nossa equipa trata de todo o processo junto do novo operador — MEO, NOS, Vodafone, DIGI ou NOWO. O cliente mantém o número de telefone e a transição demora, em média, 5 dias úteis.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Qual a poupança média na fatura de energia?<span class="faq-icon">+</span></button>
+          <div class="faq-a">A poupança média dos nossos clientes situa-se entre 15% e 35% na fatura de eletricidade e gás. Utilize o nosso <a href="https://solucoesdiferentes-simulador-energi.vercel.app/" target="_blank">Simulador Gratuito</a> para calcular a sua poupança real em menos de 2 minutos.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Os serviços de consultoria têm algum custo?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Não. A consultoria é inteiramente gratuita para o cliente final. A nossa remuneração é assegurada diretamente pelos operadores e fornecedores de energia quando concretizamos uma mudança bem-sucedida.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">A DIGI é uma boa alternativa ao MEO ou NOS?<span class="faq-icon">+</span></button>
+          <div class="faq-a">A DIGI é uma excelente opção para quem prioriza velocidade e preço. Para quem valoriza pacotes premium com televisão e suporte mais abrangente, o MEO ou NOS podem ser mais adequados. Analisamos o seu perfil gratuitamente e apresentamos a melhor opção.</div>
+        </div>
+      </div>
+      <div class="faq-col">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Qual é a melhor tarifa de energia para empresas?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Depende do perfil de consumo. Trabalhamos com Portulogus, EDP Empresarial, Iberdrola e Endesa Empresarial. Para grandes consumidores, o mercado liberalizado oferece condições substancialmente mais vantajosas face às tarifas reguladas.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Quanto tempo demora a instalação de painéis solares?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Após aprovação e licenciamento — processo que demora entre 2 a 6 semanas — a instalação física é concluída em 1 a 3 dias. Trabalhamos com EDP Solar, Galp e Iberdrola para garantir equipamentos certificados e as melhores condições de financiamento.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">O NOWO tem cobertura na minha área?<span class="faq-icon">+</span></button>
+          <div class="faq-a">O NOWO opera por rede de cabo em zonas específicas, principalmente no norte e centro do país. A nossa equipa verifica gratuitamente a cobertura na sua morada e apresenta sempre alternativas equivalentes caso não exista cobertura disponível.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Como posso contactar a Soluções Diferentes?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Pode contactar-nos por WhatsApp no <a href="https://wa.me/351915006353" target="_blank">915 006 353</a>, por email em <a href="/cdn-cgi/l/email-protection#0b62656d644b7864677e68646e786f626d6e796e657f6e78257b7f"><span class="__cf_email__" data-cfemail="2f464149406f5c40435a4c404a5c4b46494a5d4a415b4a5c015f5b">[email&#160;protected]</span></a> ou preenchendo o formulário de contacto abaixo. Respondemos sempre no próprio dia útil.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACTO ══ -->
+<section class="mvv" id="contacto">
+  <div class="inner">
+    <div class="contact-wrap">
+      <div class="contact-left reveal">
+        <p class="s-label">Fale connosco</p>
+        <h2 class="s-title">Peça o seu<br><em>orçamento gratuito</em></h2>
+        <p style="margin-top:14px;font-size:.9rem;color:var(--gray);line-height:1.75;">Preencha o formulário e a nossa equipa entra em contacto no mesmo dia útil para apresentar as melhores soluções disponíveis para o seu caso.</p>
+        <div class="contact-info-list">
+          <div class="ci-item">
+            <div class="ci-icon" style="background:rgba(37,211,102,.1);">&#128172;</div>
+            <div>
+              <div class="ci-label">WhatsApp</div>
+              <div class="ci-val"><a href="https://wa.me/351915006353" target="_blank" style="color:#25D366;font-weight:700;">915 006 353</a></div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon" style="background:rgba(232,64,28,.08);">&#128140;</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-val"><a href="/cdn-cgi/l/email-protection#0a63646c654a7965667f69656f796e636c6f786f647e6f79247a7e" style="color:var(--accent);font-weight:600;"><span class="__cf_email__" data-cfemail="7d14131b123d0e1211081e12180e19141b180f181309180e530d09">[email&#160;protected]</span></a></div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon" style="background:rgba(240,165,0,.1);">&#128336;</div>
+            <div>
+              <div class="ci-label">Horário de atendimento</div>
+              <div class="ci-val">Segunda a Sexta &mdash; 9h00 às 19h00</div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon" style="background:rgba(11,30,61,.07);">&#127758;</div>
+            <div>
+              <div class="ci-label">Área de atuação</div>
+              <div class="ci-val">Portugal Continental e Ilhas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right reveal">
+        <div class="cf-card">
+          <div class="cf-tabs">
+            <button class="cf-tab active" onclick="cfTab(this,'tc')">&#128222; Telecomunicações</button>
+            <button class="cf-tab" onclick="cfTab(this,'en')">&#9889; Energia</button>
+            <button class="cf-tab" onclick="cfTab(this,'ou')">&#128172; Outro</button>
+          </div>
+          <div class="cf-row2">
+            <div class="cf-group">
+              <label class="cf-label">Nome completo *</label>
+              <input class="cf-input" type="text" placeholder="O seu nome">
+            </div>
+            <div class="cf-group">
+              <label class="cf-label">Contacto telefónico *</label>
+              <input class="cf-input" type="tel" placeholder="9XX XXX XXX">
+            </div>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">Endereço de email</label>
+            <input class="cf-input" type="email" placeholder="email@exemplo.pt">
+          </div>
+          <div class="cf-group" id="cf-tc">
+            <label class="cf-label">Operador atual</label>
+            <select class="cf-input cf-select">
+              <option value="">Selecione o operador atual</option>
+              <option>MEO</option><option>NOS</option><option>Vodafone</option>
+              <option>DIGI</option><option>NOWO</option><option>Outro / Sem contrato</option>
+            </select>
+          </div>
+          <div class="cf-group cf-hidden" id="cf-en">
+            <label class="cf-label">Tipo de serviço</label>
+            <select class="cf-input cf-select">
+              <option value="">Selecione o serviço de interesse</option>
+              <option>Energia Residencial</option><option>Energia Empresarial</option>
+              <option>Solar Fotovoltaico</option><option>Comparar tarifas</option>
+            </select>
+          </div>
+          <div class="cf-group cf-hidden" id="cf-ou">
+            <label class="cf-label">Assunto</label>
+            <input class="cf-input" type="text" placeholder="Descreva brevemente o seu assunto">
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">Mensagem</label>
+            <textarea class="cf-input cf-textarea" placeholder="Descreva a sua situação atual e o que pretende melhorar ou saber. Quanto mais detalhe, mais rápido conseguimos ajudar."></textarea>
+          </div>
+          <button class="cf-submit" onclick="cfSubmit(this)">Enviar pedido de contacto</button>
+          <p class="cf-note">&#128274; Os seus dados são tratados com total confidencialidade, ao abrigo do RGPD, e nunca partilhados com terceiros.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CERTIFICAÇÕES ══ -->
+<div class="cert-section">
+  <p class="s-label">Qualidade &amp; Conformidade</p>
+  <h2 class="s-title">Certificações que nos <em>distinguem</em></h2>
+  <div class="cert-row">
+    <div class="cert-badge reveal"><div class="cert-badge-icon">&#127885;</div><span>APCC</span></div>
+    <div class="cert-badge reveal"><div class="cert-badge-icon">&#128203;</div><span>dGERT</span></div>
+    <div class="cert-badge reveal"><div class="cert-badge-icon">&#9989;</div><span>ISO 9001</span></div>
+    <div class="cert-badge reveal"><div class="cert-badge-icon">&#127807;</div><span>Política Ambiental</span></div>
+  </div>
 </div>
 
-<!-- WHATSAPP FLOAT -->
-<a class="wa-float" href="https://wa.me/351915006353" target="_blank" rel="noopener" title="WhatsApp 915 006 353">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+<!-- ══ CTA BAND ══ -->
+<div class="cta-band">
+  <h2>Pronto para reduzir os seus custos em energia e telecomunicações?</h2>
+  <a href="/cdn-cgi/l/email-protection#f39a9d959cb3809c9f86909c9680979a959681969d879680dd8387">Falar com a nossa equipa &#8594;</a>
+</div>
+
+<!-- WA FLOAT -->
+<a class="wa-float" href="https://wa.me/351915006353" target="_blank" rel="noopener" title="WhatsApp — 915 006 353">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
 </a>
 
-<!-- FOOTER -->
-<footer id="insights">
+<!-- ══ FOOTER ══ -->
+<footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="footer-brand-logo">
-        <img src="./logo.jpg" alt="Logo">
-        <div class="footer-brand-name">Soluções Diferentes<span>Telecomunicações &amp; Energia</span></div>
+      <div class="fb-logo">
+        <img src="./logo.jpg" alt="Soluções Diferentes">
+        <div class="fb-name">Soluções Diferentes<span>Telecomunicações &amp; Energia</span></div>
       </div>
-      <p>Soluções personalizadas de contact center, telecomunicações e energia para o mercado português.</p>
-      <div class="footer-contacts">
-        <a href="mailto:parcerias@solucoesdiferentes.pt">
+      <p class="fb-desc">Parceiros certificados MEO, NOS, Vodafone, DIGI, NOWO, EDP, Galp, Iberdrola, Endesa, Repsol e Portulogus. Soluções de contact center, telecomunicações e energia para o mercado português.</p>
+      <div class="fb-contacts">
+        <a href="/cdn-cgi/l/email-protection#7c15121a133c0f1310091f13190f18151a190e191208190f520c08">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
-          parcerias@solucoesdiferentes.pt
+          <span class="__cf_email__" data-cfemail="620b0c040d22110d0e17010d0711060b040710070c1607114c1216">[email&#160;protected]</span>
         </a>
         <a class="wa" href="https://wa.me/351915006353" target="_blank" rel="noopener">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
           915 006 353
         </a>
       </div>
-      <div class="footer-social">
-        <a class="fsoc fsoc-fb" href="https://www.facebook.com/jose.magalhaes.5" target="_blank" rel="noopener" title="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
-        </a>
-        <a class="fsoc fsoc-ig" href="https://www.instagram.com/stories/jose.magalhaes.35/" target="_blank" rel="noopener" title="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a class="fsoc fsoc-tt" href="https://www.tiktok.com/@josemagalhaes084" target="_blank" rel="noopener" title="TikTok">
-          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
-        </a>
+      <div class="fsoc-row">
+        <a class="fsoc fsoc-fb" href="https://www.facebook.com/jose.magalhaes.5" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg></a>
+        <a class="fsoc fsoc-ig" href="https://www.instagram.com/stories/jose.magalhaes.35/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a class="fsoc fsoc-tt" href="https://www.tiktok.com/@josemagalhaes084" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
       </div>
     </div>
-    <div class="f-col">
-      <h4>Empresa</h4>
-      <ul>
-        <li><a href="#quem-somos">Quem Somos</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#insights">Insights</a></li>
-        <li><a href="#recrutamento">Recrutamento</a></li>
-        <li><a href="#contactos">Contactos</a></li>
-      </ul>
-    </div>
-    <div class="f-col">
-      <h4>Legal</h4>
-      <ul>
-        <li><a href="#">Política de Privacidade</a></li>
-        <li><a href="#">Política Anti-Corrupção</a></li>
-        <li><a href="#">Código de Conduta</a></li>
-        <li><a href="#">Política de Qualidade</a></li>
-        <li><a href="#">Política de Cookies</a></li>
-      </ul>
+    <div class="footer-cols-row" style="display:contents;">
+      <div class="f-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#quem-somos">Quem Somos</a></li>
+          <li><a href="#telecomunicacoes">Telecomunicações</a></li>
+          <li><a href="#energia">Energias</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#testemunhos">Testemunhos</a></li>
+          <li><a href="#recrutamento">Recrutamento</a></li>
+          <li><a href="#contacto">Contactos</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Informação Legal</h4>
+        <ul>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Política Anti-Corrupção</a></li>
+          <li><a href="#">Código de Conduta</a></li>
+          <li><a href="#">Política de Qualidade</a></li>
+          <li><a href="#">Política de Cookies</a></li>
+        </ul>
+      </div>
     </div>
     <div class="f-col">
       <h4>Área de Parceiros</h4>
-      <a class="crm-btn-footer" href="https://v0-crm-web-app-snowy.vercel.app/login" target="_blank" rel="noopener">
+      <a class="btn-f-sim" href="https://solucoesdiferentes-simulador-energi.vercel.app/" target="_blank" rel="noopener">&#9889; Simulador de Energia</a>
+      <a class="btn-f-crm" href="https://v0-crm-web-app-snowy.vercel.app/login" target="_blank" rel="noopener">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        Aceder ao CRM →
+        Aceder ao CRM
       </a>
-      <p style="font-size:.76rem;color:rgba(255,255,255,.3);margin-top:6px">Área exclusiva para parceiros e colaboradores certificados.</p>
+      <p style="font-size:.72rem;color:rgba(255,255,255,.28);margin-top:10px;line-height:1.6;">Acesso exclusivo para parceiros e colaboradores certificados da Soluções Diferentes.</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© Soluções Diferentes | 2026 — Todos os Direitos Reservados</p>
-    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-      <div style="display:flex;gap:8px;">
-        <a class="fsoc fsoc-fb" href="https://www.facebook.com/jose.magalhaes.5" target="_blank" rel="noopener" title="Facebook" style="width:32px;height:32px;border-radius:7px;">
-          <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:#fff;"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
-        </a>
-        <a class="fsoc fsoc-ig" href="https://www.instagram.com/stories/jose.magalhaes.35/" target="_blank" rel="noopener" title="Instagram" style="width:32px;height:32px;border-radius:7px;">
-          <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:#fff;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a class="fsoc fsoc-tt" href="https://www.tiktok.com/@josemagalhaes084" target="_blank" rel="noopener" title="TikTok" style="width:32px;height:32px;border-radius:7px;">
-          <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:#fff;"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
-        </a>
-      </div>
-      <div class="f-legal">
-        <a href="#">Privacidade</a>
-        <a href="#">Cookies</a>
-        <a href="#">Conduta</a>
-      </div>
+    <p>&copy; 2026 Soluções Diferentes &mdash; Todos os direitos reservados.</p>
+    <div class="f-legal">
+      <a href="#">Privacidade</a>
+      <a href="#">Cookies</a>
+      <a href="#">Conduta</a>
     </div>
   </div>
 </footer>
 
-<script>
-  // ── SLIDESHOW ──
-  const slides = document.querySelectorAll('.slide');
-  const dots   = document.querySelectorAll('.dot');
-  let cur = 0, timer;
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── HAMBURGER
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+const overlay = document.getElementById('navOverlay');
+function toggleMenu(open) {
+  hamburger.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', open);
+  navLinks.classList.toggle('open', open);
+  overlay.classList.toggle('show', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+hamburger.addEventListener('click', () => toggleMenu(!navLinks.classList.contains('open')));
+overlay.addEventListener('click', () => toggleMenu(false));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
 
-  function goTo(n) {
-    slides[cur].classList.remove('active');
-    dots[cur].classList.remove('active');
-    cur = (n + slides.length) % slides.length;
-    slides[cur].classList.add('active');
-    dots[cur].classList.add('active');
-  }
-  function next() { goTo(cur + 1); }
-  function prev() { goTo(cur - 1); }
-  function startTimer() { timer = setInterval(next, 5500); }
-  function resetTimer() { clearInterval(timer); startTimer(); }
+// ── SLIDESHOW
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let cur = 0, timer;
+function goTo(n) {
+  slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+  cur = (n + slides.length) % slides.length;
+  slides[cur].classList.add('active'); dots[cur].classList.add('active');
+}
+function startTimer() { timer = setInterval(() => goTo(cur + 1), 5500); }
+function resetTimer() { clearInterval(timer); startTimer(); }
+document.getElementById('nextSlide').addEventListener('click', () => { goTo(cur + 1); resetTimer(); });
+document.getElementById('prevSlide').addEventListener('click', () => { goTo(cur - 1); resetTimer(); });
+dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.i); resetTimer(); }));
+let tx = 0;
+document.getElementById('hero').addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, {passive:true});
+document.getElementById('hero').addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].screenX - tx;
+  if (Math.abs(dx) > 50) { goTo(dx < 0 ? cur + 1 : cur - 1); resetTimer(); }
+}, {passive:true});
+startTimer();
 
-  document.getElementById('nextSlide').addEventListener('click', () => { next(); resetTimer(); });
-  document.getElementById('prevSlide').addEventListener('click', () => { prev(); resetTimer(); });
-  dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.i); resetTimer(); }));
-  startTimer();
+// ── MOBILE STATS
+const mob = document.querySelector('.hero-stats-mob');
+function chkMob() { if (mob) mob.style.display = window.innerWidth <= 768 ? 'flex' : 'none'; }
+chkMob(); window.addEventListener('resize', chkMob);
 
-  // ── REVEAL ON SCROLL ──
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// ── REVEAL
+new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.08 }).observe && document.querySelectorAll('.reveal').forEach(el => {
+  new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.08 }).observe(el);
+});
 
-  // ── NAV SHADOW ──
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    nav.style.boxShadow = window.scrollY > 10 ? '0 4px 30px rgba(0,0,0,.13)' : '0 2px 20px rgba(0,0,0,.08)';
+// ── FAQ
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── CONTACT FORM TABS
+function cfTab(btn, id) {
+  document.querySelectorAll('.cf-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  ['tc','en','ou'].forEach(k => {
+    const el = document.getElementById('cf-' + k);
+    if (el) el.classList.toggle('cf-hidden', k !== id);
   });
+}
+function cfSubmit(btn) {
+  const inputs = btn.closest('.cf-card').querySelectorAll('input[type=text], input[type=tel]');
+  let ok = true;
+  inputs.forEach(i => { if (!i.value.trim()) { i.style.borderColor = '#e8401c'; ok = false; } else { i.style.borderColor = ''; } });
+  if (!ok) return;
+  btn.textContent = 'Pedido enviado! Entraremos em contacto brevemente.';
+  btn.style.background = '#00A859';
+  btn.disabled = true;
+}
+
+// ── FOOTER COLS MOBILE
+function fCols() {
+  const w = document.querySelector('.footer-cols-row');
+  if (!w) return;
+  if (window.innerWidth <= 768) {
+    w.style.display = 'grid';
+    w.style.gridTemplateColumns = window.innerWidth <= 400 ? '1fr' : '1fr 1fr';
+    w.style.gap = '28px';
+  } else { w.style.display = 'contents'; }
+}
+fCols(); window.addEventListener('resize', fCols);
 </script>
 </body>
 </html>
