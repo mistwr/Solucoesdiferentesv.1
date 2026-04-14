@@ -65,12 +65,13 @@ nav{position:sticky;top:0;z-index:300;background:var(--white);box-shadow:0 1px 0
 .dd-ecol-list{display:flex;flex-direction:column;gap:5px;}
 .bchip{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:9px;border:1px solid transparent;text-decoration:none;background:var(--light);transition:all .18s;}
 .bchip:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.09);}
-.bdot{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:.58rem;color:#fff;flex-shrink:0;text-align:center;line-height:1.2;}
+.bdot{width:52px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;}
+.bdot svg{width:100%;height:100%;display:block;}
 .bchip-name{font-family:'Sora',sans-serif;font-weight:700;font-size:.78rem;color:var(--navy);}
 .bchip-sub{font-size:.63rem;color:var(--gray);margin-top:1px;}
 /* Brand dot colors — cores oficiais */
-.d-meo  {background:#FF6200;}                                   /* MEO — laranja oficial */
-.d-nos  {background:#003DA5;}                                   /* NOS — azul oficial */
+.d-meo  {background:#009BDE;}                                   /* MEO — laranja oficial */
+.d-nos  {background:#000;}                                   /* NOS — azul oficial */
 .d-voda {background:#E60000;}                                   /* Vodafone — vermelho oficial */
 .d-digi {background:#FFCD00;}                                   /* DIGI — amarelo oficial */
 .d-nowo {background:#FF5A00;}                                   /* NOWO — laranja oficial */
@@ -81,8 +82,8 @@ nav{position:sticky;top:0;z-index:300;background:var(--white);box-shadow:0 1px 0
 .d-repsol{background:#F4A81D;}                                  /* Repsol — amarelo/ouro oficial */
 .d-porto {background:linear-gradient(135deg,#1e3a5f,#2d5a8e);} /* Portulogus */
 /* chip hover tints */
-.bchip-meo:hover   {background:rgba(255,98,0,.07);   border-color:rgba(255,98,0,.28);}
-.bchip-nos:hover   {background:rgba(0,61,165,.07);   border-color:rgba(0,61,165,.28);}
+.bchip-meo:hover   {background:rgba(0,155,222,.07);  border-color:rgba(0,155,222,.28);}
+.bchip-nos:hover   {background:rgba(0,0,0,.06);       border-color:rgba(0,0,0,.22);}
 .bchip-voda:hover  {background:rgba(230,0,0,.07);    border-color:rgba(230,0,0,.28);}
 .bchip-digi:hover  {background:rgba(255,205,0,.1);   border-color:rgba(255,205,0,.38);}
 .bchip-nowo:hover  {background:rgba(255,90,0,.07);   border-color:rgba(255,90,0,.28);}
@@ -201,12 +202,13 @@ section{padding:88px 80px;}
 .brand-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;transform:scaleX(0);transition:transform .3s;}
 .brand-card:hover{transform:translateY(-5px);box-shadow:0 16px 44px rgba(0,0,0,.1);border-color:transparent;}
 .brand-card:hover::after{transform:scaleX(1);}
-.brand-logo{width:62px;height:62px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:.85rem;color:#fff;margin:0 auto;}
+.brand-logo{width:100%;max-width:120px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto;overflow:hidden;}
+.brand-logo svg{width:100%;height:100%;display:block;}
 .brand-card-name{font-family:'Sora',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy);}
 .brand-desc{font-size:.76rem;color:var(--gray);line-height:1.6;}
 .brand-pill{font-size:.63rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 10px;border-radius:100px;}
 /* Card accent lines */
-.bc-meo-c::after{background:#FF6200;} .bc-nos-c::after{background:#003DA5;}
+.bc-meo-c::after{background:#009BDE;} .bc-nos-c::after{background:#000;}
 .bc-voda-c::after{background:#E60000;} .bc-digi-c::after{background:#FFCD00;}
 .bc-nowo-c::after{background:#FF5A00;}
 
@@ -216,7 +218,8 @@ section{padding:88px 80px;}
 .ecol-brands{display:flex;flex-direction:column;gap:10px;}
 .ebrand{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:#fff;border:1px solid var(--border);transition:all .22s;}
 .ebrand:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08);border-color:transparent;}
-.edot{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:.62rem;color:#fff;flex-shrink:0;text-align:center;line-height:1.3;}
+.edot{width:64px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;}
+.edot svg{width:100%;height:100%;display:block;}
 .einfo-name{font-family:'Sora',sans-serif;font-weight:700;font-size:.84rem;color:var(--navy);}
 .einfo-sub{font-size:.68rem;color:var(--gray);margin-top:1px;}
 
@@ -501,11 +504,11 @@ footer{background:var(--navy);padding:64px 80px 36px;}
       <div class="dd-panel">
         <div class="dd-head">Operadores Parceiros</div>
         <div class="dd-brands">
-          <a class="bchip bchip-meo" href="#telecomunicacoes"><div class="bdot d-meo">MEO</div><div><div class="bchip-name">MEO</div><div class="bchip-sub">Fibra &amp; TV</div></div></a>
-          <a class="bchip bchip-nos" href="#telecomunicacoes"><div class="bdot d-nos">NOS</div><div><div class="bchip-name">NOS</div><div class="bchip-sub">Internet &amp; TV</div></div></a>
-          <a class="bchip bchip-voda" href="#telecomunicacoes"><div class="bdot d-voda" style="font-size:.54rem;line-height:1.2;">VODA<br>FONE</div><div><div class="bchip-name">Vodafone</div><div class="bchip-sub">5G &amp; Fibra</div></div></a>
-          <a class="bchip bchip-digi" href="#telecomunicacoes"><div class="bdot d-digi" style="color:#111;">DIGI</div><div><div class="bchip-name">DIGI</div><div class="bchip-sub">Low-cost Fibra</div></div></a>
-          <a class="bchip bchip-nowo" href="#telecomunicacoes" style="grid-column:span 2;"><div class="bdot d-nowo">NOWO</div><div><div class="bchip-name">NOWO</div><div class="bchip-sub">Internet por Cabo</div></div></a>
+          <a class="bchip bchip-meo" href="#telecomunicacoes"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#009BDE"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="12" fill="#fff">meo</text></svg></div><div><div class="bchip-name">MEO</div><div class="bchip-sub">Fibra &amp; TV</div></div></a>
+          <a class="bchip bchip-nos" href="#telecomunicacoes"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#000"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="900" font-size="13" fill="#fff" letter-spacing="1">NOS</text></svg></div><div><div class="bchip-name">NOS</div><div class="bchip-sub">Internet &amp; TV</div></div></a>
+          <a class="bchip bchip-voda" href="#telecomunicacoes"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#E60000"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="8" fill="#fff" letter-spacing=".2">vodafone</text></svg></div><div><div class="bchip-name">Vodafone</div><div class="bchip-sub">5G &amp; Fibra</div></div></a>
+          <a class="bchip bchip-digi" href="#telecomunicacoes"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#FFCD00"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="900" font-size="12" fill="#111">DIGI</text></svg></div><div><div class="bchip-name">DIGI</div><div class="bchip-sub">Low-cost Fibra</div></div></a>
+          <a class="bchip bchip-nowo" href="#telecomunicacoes" style="grid-column:span 2;"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#FF5A00"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="11" fill="#fff">NOWO</text></svg></div><div><div class="bchip-name">NOWO</div><div class="bchip-sub">Internet por Cabo</div></div></a>
         </div>
         <a class="dd-cta" href="#telecomunicacoes">Ver todos os operadores &#8594;</a>
       </div>
@@ -523,27 +526,27 @@ footer{background:var(--navy);padding:64px 80px 36px;}
           <div class="dd-ecol">
             <div class="dd-ecol-title">&#9728; Solar</div>
             <div class="dd-ecol-list">
-              <a class="bchip bchip-edp" href="#energia"><div class="bdot d-edp">EDP</div><div><div class="bchip-name">EDP Solar</div></div></a>
-              <a class="bchip bchip-galp" href="#energia"><div class="bdot d-galp">GALP</div><div><div class="bchip-name">Galp Solar</div></div></a>
-              <a class="bchip bchip-iber" href="#energia"><div class="bdot d-iber" style="font-size:.52rem;line-height:1.2;">IBER<br>DROLA</div><div><div class="bchip-name">Iberdrola Solar</div></div></a>
+              <a class="bchip bchip-edp" href="#energia"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#00A859"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="12" fill="#fff">edp</text></svg></div><div><div class="bchip-name">EDP Solar</div></div></a>
+              <a class="bchip bchip-galp" href="#energia"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#DC0A2D"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="12" fill="#fff">galp</text></svg></div><div><div class="bchip-name">Galp Solar</div></div></a>
+              <a class="bchip bchip-iber" href="#energia"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#78BE20"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="7.5" fill="#fff" letter-spacing="-.2">iberdrola</text></svg></div><div><div class="bchip-name">Iberdrola Solar</div></div></a>
             </div>
           </div>
           <div class="dd-ecol">
             <div class="dd-ecol-title">&#127968; Residencial</div>
             <div class="dd-ecol-list">
-              <a class="bchip bchip-endesa" href="#energia"><div class="bdot d-endesa" style="font-size:.54rem;line-height:1.2;">END<br>ESA</div><div><div class="bchip-name">Endesa</div></div></a>
-              <a class="bchip bchip-iber" href="#energia"><div class="bdot d-iber" style="font-size:.52rem;line-height:1.2;">IBER<br>DROLA</div><div><div class="bchip-name">Iberdrola</div></div></a>
-              <a class="bchip bchip-galp" href="#energia"><div class="bdot d-galp">GALP</div><div><div class="bchip-name">Galp</div></div></a>
-              <a class="bchip bchip-repsol" href="#energia"><div class="bdot d-repsol" style="color:#333;font-size:.54rem;line-height:1.2;">REP<br>SOL</div><div><div class="bchip-name">Repsol</div></div></a>
+              <a class="bchip bchip-endesa" href="#energia"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#007CC2"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="9" fill="#fff">endesa</text></svg></div><div><div class="bchip-name">Endesa</div></div></a>
+              <a class="bchip bchip-iber" href="#energia"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#78BE20"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="7.5" fill="#fff" letter-spacing="-.2">iberdrola</text></svg></div><div><div class="bchip-name">Iberdrola</div></div></a>
+              <a class="bchip bchip-galp" href="#energia"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#DC0A2D"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="12" fill="#fff">galp</text></svg></div><div><div class="bchip-name">Galp</div></div></a>
+              <a class="bchip bchip-repsol" href="#energia"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#F4A81D"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="10" fill="#333">Repsol</text></svg></div><div><div class="bchip-name">Repsol</div></div></a>
             </div>
           </div>
           <div class="dd-ecol">
             <div class="dd-ecol-title">&#127970; Empresarial</div>
             <div class="dd-ecol-list">
-              <a class="bchip bchip-porto" href="#energia"><div class="bdot d-porto" style="font-size:.5rem;line-height:1.2;">PORT<br>ULOGUS</div><div><div class="bchip-name">Portulogus</div></div></a>
-              <a class="bchip bchip-edp" href="#energia"><div class="bdot d-edp">EDP</div><div><div class="bchip-name">EDP Empresarial</div></div></a>
-              <a class="bchip bchip-iber" href="#energia"><div class="bdot d-iber" style="font-size:.52rem;line-height:1.2;">IBER<br>DROLA</div><div><div class="bchip-name">Iberdrola Emp.</div></div></a>
-              <a class="bchip bchip-endesa" href="#energia"><div class="bdot d-endesa" style="font-size:.54rem;line-height:1.2;">END<br>ESA</div><div><div class="bchip-name">Endesa Emp.</div></div></a>
+              <a class="bchip bchip-porto" href="#energia"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#1e3a5f"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="6.5" fill="#fff">Portulogus</text></svg></div><div><div class="bchip-name">Portulogus</div></div></a>
+              <a class="bchip bchip-edp" href="#energia"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#00A859"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="12" fill="#fff">edp</text></svg></div><div><div class="bchip-name">EDP Empresarial</div></div></a>
+              <a class="bchip bchip-iber" href="#energia"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#78BE20"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="7.5" fill="#fff" letter-spacing="-.2">iberdrola</text></svg></div><div><div class="bchip-name">Iberdrola Emp.</div></div></a>
+              <a class="bchip bchip-endesa" href="#energia"><div class="bdot"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="6" fill="#007CC2"/><text x="26" y="18" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="9" fill="#fff">endesa</text></svg></div><div><div class="bchip-name">Endesa Emp.</div></div></a>
             </div>
           </div>
         </div>
@@ -715,35 +718,62 @@ footer{background:var(--navy);padding:64px 80px 36px;}
     <div class="telecom-grid">
 
       <div class="brand-card bc-meo-c reveal">
-        <div class="brand-logo d-meo">MEO</div>
+        <div class="brand-logo">
+          <svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg">
+            <rect width="120" height="52" rx="12" fill="#009BDE"/>
+            <text x="60" y="34" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="26" fill="#fff" letter-spacing="-1">meo</text>
+          </svg>
+        </div>
         <div class="brand-card-name">MEO</div>
         <div class="brand-desc">Fibra ótica de alta velocidade, televisão, internet móvel e serviços de voz. Maior operador nacional com cobertura total em Portugal continental e ilhas.</div>
-        <span class="brand-pill" style="background:rgba(255,98,0,.09);color:#FF6200;">Fibra &middot; TV &middot; Móvel</span>
+        <span class="brand-pill" style="background:rgba(0,155,222,.09);color:#009BDE;">Fibra &middot; TV &middot; Móvel</span>
       </div>
 
       <div class="brand-card bc-nos-c reveal">
-        <div class="brand-logo d-nos">NOS</div>
+        <div class="brand-logo">
+          <svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg">
+            <rect width="120" height="52" rx="12" fill="#000"/>
+            <text x="60" y="35" text-anchor="middle" font-family="Sora,sans-serif" font-weight="900" font-size="28" fill="#fff" letter-spacing="2">NOS</text>
+          </svg>
+        </div>
         <div class="brand-card-name">NOS</div>
         <div class="brand-desc">Internet de alta velocidade, televisão premium com conteúdos exclusivos, serviços móveis e soluções empresariais integradas.</div>
-        <span class="brand-pill" style="background:rgba(0,61,165,.08);color:#003DA5;">TV &middot; Internet &middot; Empresas</span>
+        <span class="brand-pill" style="background:rgba(0,0,0,.07);color:#000;">TV &middot; Internet &middot; Empresas</span>
       </div>
 
       <div class="brand-card bc-voda-c reveal">
-        <div class="brand-logo d-voda" style="font-size:.7rem;line-height:1.3;text-align:center;">VODA<br>FONE</div>
+        <div class="brand-logo">
+          <svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg">
+            <rect width="120" height="52" rx="12" fill="#E60000"/>
+            <circle cx="24" cy="26" r="13" fill="none" stroke="#fff" stroke-width="3"/>
+            <path d="M24 16 Q34 16 34 26 Q34 36 24 36" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <text x="72" y="32" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="14" fill="#fff" letter-spacing=".5">vodafone</text>
+          </svg>
+        </div>
         <div class="brand-card-name">Vodafone</div>
         <div class="brand-desc">Líder em redes 5G com fibra residencial e empresarial. Excelência no serviço de apoio ao cliente e cobertura móvel superior em todo o país.</div>
         <span class="brand-pill" style="background:rgba(230,0,0,.08);color:#b80000;">5G &middot; Fibra &middot; Empresas</span>
       </div>
 
       <div class="brand-card bc-digi-c reveal">
-        <div class="brand-logo d-digi" style="color:#111;">DIGI</div>
+        <div class="brand-logo">
+          <svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg">
+            <rect width="120" height="52" rx="12" fill="#FFCD00"/>
+            <text x="60" y="35" text-anchor="middle" font-family="Sora,sans-serif" font-weight="900" font-size="26" fill="#111" letter-spacing="1">DIGI</text>
+          </svg>
+        </div>
         <div class="brand-card-name">DIGI</div>
         <div class="brand-desc">Fibra ótica até 10 Gbps com preços altamente competitivos. A alternativa low-cost de qualidade crescente no mercado português de telecomunicações.</div>
         <span class="brand-pill" style="background:rgba(255,205,0,.12);color:#9a6e00;">Low-cost &middot; Fibra &middot; Veloz</span>
       </div>
 
       <div class="brand-card bc-nowo-c reveal">
-        <div class="brand-logo d-nowo">NOWO</div>
+        <div class="brand-logo">
+          <svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg">
+            <rect width="120" height="52" rx="12" fill="#FF5A00"/>
+            <text x="60" y="35" text-anchor="middle" font-family="Sora,sans-serif" font-weight="900" font-size="24" fill="#fff" letter-spacing="1">NOWO</text>
+          </svg>
+        </div>
         <div class="brand-card-name">NOWO</div>
         <div class="brand-desc">Internet por rede de cabo com televisão digital e serviço de voz. Contratos flexíveis, sem período de fidelização obrigatório, para clientes residenciais.</div>
         <span class="brand-pill" style="background:rgba(255,90,0,.08);color:#FF5A00;">Cabo &middot; TV &middot; Flexível</span>
@@ -774,15 +804,15 @@ footer{background:var(--navy);padding:64px 80px 36px;}
         <div class="ecol-title">&#9728; Solar Fotovoltaico</div>
         <div class="ecol-brands">
           <div class="ebrand reveal">
-            <div class="edot d-edp">EDP</div>
+            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#00A859"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">edp</text></svg></div>
             <div><div class="einfo-name">EDP Solar</div><div class="einfo-sub">Instalação e monitorização de sistemas fotovoltaicos</div></div>
           </div>
           <div class="ebrand reveal">
-            <div class="edot d-galp">GALP</div>
+            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#DC0A2D"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">galp</text></svg></div>
             <div><div class="einfo-name">Galp Solar</div><div class="einfo-sub">Soluções solares para casa e empresa</div></div>
           </div>
           <div class="ebrand reveal">
-            <div class="edot d-iber" style="font-size:.54rem;line-height:1.3;">IBER<br>DROLA</div>
+            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#78BE20"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="9" fill="#fff" letter-spacing="-.3">iberdrola</text></svg></div>
             <div><div class="einfo-name">Iberdrola Solar</div><div class="einfo-sub">Energia renovável fotovoltaica</div></div>
           </div>
         </div>
@@ -792,19 +822,19 @@ footer{background:var(--navy);padding:64px 80px 36px;}
         <div class="ecol-title">&#127968; Residencial</div>
         <div class="ecol-brands">
           <div class="ebrand reveal">
-            <div class="edot d-endesa" style="font-size:.56rem;line-height:1.3;">END<br>ESA</div>
+            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#007CC2"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="11" fill="#fff" letter-spacing="-.3">endesa</text></svg></div>
             <div><div class="einfo-name">Endesa</div><div class="einfo-sub">Eletricidade e gás natural para habitação</div></div>
           </div>
           <div class="ebrand reveal">
-            <div class="edot d-iber" style="font-size:.54rem;line-height:1.3;">IBER<br>DROLA</div>
+            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#78BE20"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="9" fill="#fff" letter-spacing="-.3">iberdrola</text></svg></div>
             <div><div class="einfo-name">Iberdrola</div><div class="einfo-sub">Eletricidade e gás para particulares</div></div>
           </div>
           <div class="ebrand reveal">
-            <div class="edot d-galp">GALP</div>
+            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#DC0A2D"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">galp</text></svg></div>
             <div><div class="einfo-name">Galp</div><div class="einfo-sub">Gás natural e eletricidade residencial</div></div>
           </div>
           <div class="ebrand reveal">
-            <div class="edot d-repsol" style="color:#333;font-size:.56rem;line-height:1.3;">REP<br>SOL</div>
+            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#F4A81D"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="12" fill="#333">Repsol</text></svg></div>
             <div><div class="einfo-name">Repsol</div><div class="einfo-sub">Energia elétrica e gás para casa</div></div>
           </div>
         </div>
@@ -814,19 +844,19 @@ footer{background:var(--navy);padding:64px 80px 36px;}
         <div class="ecol-title">&#127970; Empresarial</div>
         <div class="ecol-brands">
           <div class="ebrand reveal">
-            <div class="edot d-porto" style="font-size:.5rem;line-height:1.3;">PORT<br>ULOGUS</div>
+            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#1e3a5f"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="8" fill="#fff" letter-spacing="-.2">Portulogus</text></svg></div>
             <div><div class="einfo-name">Portulogus Empresarial</div><div class="einfo-sub">Soluções de energia para empresas</div></div>
           </div>
           <div class="ebrand reveal">
-            <div class="edot d-edp">EDP</div>
+            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#00A859"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">edp</text></svg></div>
             <div><div class="einfo-name">EDP Empresarial</div><div class="einfo-sub">Eletricidade B2B e mercado livre</div></div>
           </div>
           <div class="ebrand reveal">
-            <div class="edot d-iber" style="font-size:.54rem;line-height:1.3;">IBER<br>DROLA</div>
+            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#78BE20"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="9" fill="#fff" letter-spacing="-.3">iberdrola</text></svg></div>
             <div><div class="einfo-name">Iberdrola Empresarial</div><div class="einfo-sub">Energia renovável para empresas</div></div>
           </div>
           <div class="ebrand reveal">
-            <div class="edot d-endesa" style="font-size:.56rem;line-height:1.3;">END<br>ESA</div>
+            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#007CC2"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="11" fill="#fff" letter-spacing="-.3">endesa</text></svg></div>
             <div><div class="einfo-name">Endesa Empresarial</div><div class="einfo-sub">Eletricidade e gás natural B2B</div></div>
           </div>
         </div>
@@ -888,7 +918,7 @@ footer{background:var(--navy);padding:64px 80px 36px;}
         <p class="testi-text">"Mudámos para a NOS através da equipa da Soluções Diferentes e conseguimos uma poupança de 45&#8364; mensais. Processo simples, comunicação clara e resultado acima do esperado."</p>
         <hr class="testi-sep">
         <div class="testi-author">
-          <div class="testi-avatar" style="background:#003DA5;">AS</div>
+          <div class="testi-avatar" style="background:#000;">AS</div>
           <div>
             <div class="testi-name">Ana Silva</div>
             <div class="testi-role">Gestora Financeira &mdash; Porto</div>
