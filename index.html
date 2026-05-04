@@ -69,19 +69,17 @@ nav{position:sticky;top:0;z-index:300;background:var(--white);box-shadow:0 1px 0
 .bdot svg{width:100%;height:100%;display:block;}
 .bchip-name{font-family:'Sora',sans-serif;font-weight:700;font-size:.78rem;color:var(--navy);}
 .bchip-sub{font-size:.63rem;color:var(--gray);margin-top:1px;}
-/* Brand dot colors — cores oficiais */
-.d-meo  {background:#009BDE;}                                   /* MEO — laranja oficial */
-.d-nos  {background:#000;}                                   /* NOS — azul oficial */
-.d-voda {background:#E60000;}                                   /* Vodafone — vermelho oficial */
-.d-digi {background:#FFCD00;}                                   /* DIGI — amarelo oficial */
-.d-nowo {background:#FF5A00;}                                   /* NOWO — laranja oficial */
-.d-edp  {background:#00A859;}                                   /* EDP — verde oficial */
-.d-galp {background:#DC0A2D;}                                   /* Galp — vermelho oficial */
-.d-iber {background:#78BE20;}                                   /* Iberdrola — verde lima oficial */
-.d-endesa{background:#007CC2;}                                  /* Endesa — azul oficial */
-.d-repsol{background:#F4A81D;}                                  /* Repsol — amarelo/ouro oficial */
-.d-porto {background:linear-gradient(135deg,#1e3a5f,#2d5a8e);} /* Portulogos */
-/* chip hover tints */
+.d-meo  {background:#009BDE;}
+.d-nos  {background:#000;}
+.d-voda {background:#E60000;}
+.d-digi {background:#FFCD00;}
+.d-nowo {background:#FF5A00;}
+.d-edp  {background:#00A859;}
+.d-galp {background:#DC0A2D;}
+.d-iber {background:#78BE20;}
+.d-endesa{background:#007CC2;}
+.d-repsol{background:#F4A81D;}
+.d-porto {background:linear-gradient(135deg,#1e3a5f,#2d5a8e);}
 .bchip-meo:hover   {background:rgba(0,155,222,.07);  border-color:rgba(0,155,222,.28);}
 .bchip-nos:hover   {background:rgba(0,0,0,.06);       border-color:rgba(0,0,0,.22);}
 .bchip-voda:hover  {background:rgba(230,0,0,.07);    border-color:rgba(230,0,0,.28);}
@@ -207,7 +205,6 @@ section{padding:88px 80px;}
 .brand-card-name{font-family:'Sora',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy);}
 .brand-desc{font-size:.76rem;color:var(--gray);line-height:1.6;}
 .brand-pill{font-size:.63rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 10px;border-radius:100px;}
-/* Card accent lines */
 .bc-meo-c::after{background:#009BDE;} .bc-nos-c::after{background:#000;}
 .bc-voda-c::after{background:#E60000;} .bc-digi-c::after{background:#FFCD00;}
 .bc-nowo-c::after{background:#FF5A00;}
@@ -236,6 +233,51 @@ section{padding:88px 80px;}
 .svc-link{font-size:.76rem;font-weight:700;color:var(--accent);text-decoration:none;transition:color .28s;}
 .svc-sim{border:1.5px solid rgba(245,158,11,.28);background:linear-gradient(135deg,rgba(245,158,11,.04),rgba(249,115,22,.03));}
 .svc-sim:hover{background:linear-gradient(135deg,#f59e0b,#f97316) !important;border-color:transparent !important;}
+
+/* ── Reborn AI card special ── */
+.svc-reborn{border:1.5px solid rgba(0,180,216,.25);background:linear-gradient(135deg,rgba(0,180,216,.04),rgba(11,30,61,.04));}
+.svc-reborn:hover{background:linear-gradient(135deg,#0b1e3d,#00b4d8) !important;border-color:transparent !important;}
+
+/* ── MyPoupar card special ── */
+.svc-mypoupar{border:1.5px solid rgba(245,158,11,.28);background:linear-gradient(135deg,rgba(245,158,11,.04),rgba(232,64,28,.03));}
+.svc-mypoupar:hover{background:linear-gradient(135deg,#f59e0b,#e8401c) !important;border-color:transparent !important;}
+
+/* ─────────────── FERRAMENTAS DIGITAIS BANNER ─────────────── */
+.tools-banner{background:linear-gradient(135deg,#060f1e 0%,#0d1f3c 50%,#091628 100%);padding:72px 80px;position:relative;overflow:hidden;}
+.tools-banner::before{content:'';position:absolute;top:-60px;right:10%;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,216,.12) 0%,transparent 70%);pointer-events:none;}
+.tools-banner::after{content:'';position:absolute;bottom:-80px;left:5%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.10) 0%,transparent 70%);pointer-events:none;}
+.tools-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+.tools-header{text-align:center;margin-bottom:52px;}
+.tools-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(0,180,216,.12);border:1px solid rgba(0,180,216,.28);color:#38bdf8;font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:16px;}
+.tools-banner h2{font-family:'Sora',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#fff;line-height:1.2;letter-spacing:-.5px;}
+.tools-banner h2 em{font-style:normal;color:#fbbf24;}
+.tools-banner .tools-sub{font-size:.9rem;color:rgba(255,255,255,.46);margin-top:10px;}
+.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.tool-card{border-radius:20px;padding:36px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03);backdrop-filter:blur(8px);display:flex;flex-direction:column;gap:16px;transition:all .3s;position:relative;overflow:hidden;}
+.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.tool-card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.28);border-color:rgba(255,255,255,.1);}
+.tool-card:hover::before{transform:scaleX(1);}
+.tc-reborn::before{background:linear-gradient(90deg,#00b4d8,#0077b6);}
+.tc-reborn:hover{background:rgba(0,180,216,.06) !important;}
+.tc-mypoupar::before{background:linear-gradient(90deg,#f59e0b,#e8401c);}
+.tc-mypoupar:hover{background:rgba(245,158,11,.06) !important;}
+.tool-logo-row{display:flex;align-items:center;gap:14px;}
+.tool-logo-badge{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem;}
+.tc-reborn .tool-logo-badge{background:linear-gradient(135deg,#0b1e3d,#00b4d8);}
+.tc-mypoupar .tool-logo-badge{background:linear-gradient(135deg,#f59e0b,#e8401c);}
+.tool-name{font-family:'Sora',sans-serif;font-weight:800;font-size:1.1rem;color:#fff;}
+.tool-tagline{font-size:.72rem;color:rgba(255,255,255,.38);letter-spacing:.4px;margin-top:2px;}
+.tool-desc{font-size:.85rem;color:rgba(255,255,255,.52);line-height:1.75;flex:1;}
+.tool-feats{display:flex;flex-direction:column;gap:7px;}
+.tool-feat{display:flex;align-items:center;gap:8px;font-size:.78rem;color:rgba(255,255,255,.46);}
+.tool-feat-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.tc-reborn .tool-feat-dot{background:#00b4d8;}
+.tc-mypoupar .tool-feat-dot{background:#f59e0b;}
+.tool-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;text-decoration:none;transition:all .22s;align-self:flex-start;letter-spacing:.2px;}
+.tc-reborn .tool-cta{background:#00b4d8;color:#fff;}
+.tc-reborn .tool-cta:hover{background:#0077b6;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,180,216,.38);}
+.tc-mypoupar .tool-cta{background:linear-gradient(135deg,#f59e0b,#e8401c);color:#fff;}
+.tc-mypoupar .tool-cta:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,158,11,.42);}
 
 /* ─────────────── TESTIMONIALS ─────────────── */
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;}
@@ -349,9 +391,10 @@ footer{background:var(--navy);padding:64px 80px 36px;}
 @media(max-width:1200px){
   .telecom-grid{grid-template-columns:repeat(3,1fr);}
   .dd-energy{min-width:460px;}
+  .tools-grid{grid-template-columns:1fr;}
 }
 @media(max-width:1024px){
-  nav,section,.brands-section,.cert-section,.sim-banner,.recruit,.cta-band,footer{padding-left:40px;padding-right:40px;}
+  nav,section,.brands-section,.cert-section,.sim-banner,.recruit,.cta-band,footer,.tools-banner{padding-left:40px;padding-right:40px;}
   .hero-content{padding:0 48px;}
   .slide-dots{left:48px;}
   .footer-grid{grid-template-columns:1fr 1fr;gap:36px;}
@@ -388,7 +431,6 @@ footer{background:var(--navy);padding:64px 80px 36px;}
   .chev{display:none !important;}
   .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:299;backdrop-filter:blur(3px);}
   .nav-overlay.show{display:block;}
-  /* Hero */
   .hero{height:100svh;min-height:520px;}
   .hero-content{padding:80px 20px 90px;max-width:100%;justify-content:flex-end;}
   .hero-tag{font-size:.66rem;padding:5px 13px;margin-bottom:18px;}
@@ -406,7 +448,6 @@ footer{background:var(--navy);padding:64px 80px 36px;}
   .slide-arrows{right:16px;bottom:14px;}
   .arrow{width:38px;height:38px;font-size:.95rem;}
   .dot{width:7px;height:7px;}.dot.active{width:22px;}
-  /* Sections */
   section,.brands-section,.cert-section{padding:52px 20px;}
   .sim-banner{padding:36px 20px;}
   .sb-inner{flex-direction:column;gap:28px;text-align:center;}
@@ -452,6 +493,8 @@ footer{background:var(--navy);padding:64px 80px 36px;}
   .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px;padding-top:20px;}
   .wa-float{bottom:calc(env(safe-area-inset-bottom,0px) + 20px);right:16px;width:52px;height:52px;}
   .wa-float svg{width:23px;height:23px;}
+  .tools-banner{padding:48px 20px;}
+  .tool-card{padding:24px 20px;}
 }
 @media(max-width:400px){
   .telecom-grid{grid-template-columns:1fr;}
@@ -494,8 +537,6 @@ footer{background:var(--navy);padding:64px 80px 36px;}
   <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="navLinks">
     <li><a href="#quem-somos">Quem Somos</a></li>
-
-    <!-- TELECOMUNICAÇÕES — hover preview, click vai para secção -->
     <li class="nav-dd">
       <a href="#telecomunicacoes">
         Telecomunicações
@@ -513,8 +554,6 @@ footer{background:var(--navy);padding:64px 80px 36px;}
         <a class="dd-cta" href="#telecomunicacoes">Ver todos os operadores &#8594;</a>
       </div>
     </li>
-
-    <!-- ENERGIAS — hover preview, click vai para secção -->
     <li class="nav-dd">
       <a href="#energia">
         Energias
@@ -553,8 +592,8 @@ footer{background:var(--navy);padding:64px 80px 36px;}
         <a class="dd-cta" href="#energia">Ver todos os parceiros de energia &#8594;</a>
       </div>
     </li>
-
     <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#ferramentas">Ferramentas</a></li>
     <li><a href="#recrutamento">Recrutamento</a></li>
     <li><a class="btn-sim-nav" href="https://solucoesdiferentes-simulador-energi.vercel.app/" target="_blank" rel="noopener">&#9889; Simular Energia</a></li>
     <li>
@@ -716,69 +755,36 @@ footer{background:var(--navy);padding:64px 80px 36px;}
     <h2 class="s-title">As nossas marcas de <em>Telecomunicações</em></h2>
     <p class="s-sub">Parceiros certificados dos principais operadores em Portugal. Analisamos o seu perfil e apresentamos a oferta mais vantajosa — sem custos de consultoria.</p>
     <div class="telecom-grid">
-
       <div class="brand-card bc-meo-c reveal">
-        <div class="brand-logo">
-          <svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg">
-            <rect width="120" height="52" rx="12" fill="#009BDE"/>
-            <text x="60" y="34" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="26" fill="#fff" letter-spacing="-1">meo</text>
-          </svg>
-        </div>
+        <div class="brand-logo"><svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="52" rx="12" fill="#009BDE"/><text x="60" y="34" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="26" fill="#fff" letter-spacing="-1">meo</text></svg></div>
         <div class="brand-card-name">MEO</div>
         <div class="brand-desc">Fibra ótica de alta velocidade, televisão, internet móvel e serviços de voz. Maior operador nacional com cobertura total em Portugal continental e ilhas.</div>
         <span class="brand-pill" style="background:rgba(0,155,222,.09);color:#009BDE;">Fibra &middot; TV &middot; Móvel</span>
       </div>
-
       <div class="brand-card bc-nos-c reveal">
-        <div class="brand-logo">
-          <svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg">
-            <rect width="120" height="52" rx="12" fill="#000"/>
-            <text x="60" y="35" text-anchor="middle" font-family="Sora,sans-serif" font-weight="900" font-size="28" fill="#fff" letter-spacing="2">NOS</text>
-          </svg>
-        </div>
+        <div class="brand-logo"><svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="52" rx="12" fill="#000"/><text x="60" y="35" text-anchor="middle" font-family="Sora,sans-serif" font-weight="900" font-size="28" fill="#fff" letter-spacing="2">NOS</text></svg></div>
         <div class="brand-card-name">NOS</div>
         <div class="brand-desc">Internet de alta velocidade, televisão premium com conteúdos exclusivos, serviços móveis e soluções empresariais integradas.</div>
         <span class="brand-pill" style="background:rgba(0,0,0,.07);color:#000;">TV &middot; Internet &middot; Empresas</span>
       </div>
-
       <div class="brand-card bc-voda-c reveal">
-        <div class="brand-logo">
-          <svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg">
-            <rect width="120" height="52" rx="12" fill="#E60000"/>
-            <circle cx="24" cy="26" r="13" fill="none" stroke="#fff" stroke-width="3"/>
-            <path d="M24 16 Q34 16 34 26 Q34 36 24 36" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-            <text x="72" y="32" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="14" fill="#fff" letter-spacing=".5">vodafone</text>
-          </svg>
-        </div>
+        <div class="brand-logo"><svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="52" rx="12" fill="#E60000"/><circle cx="24" cy="26" r="13" fill="none" stroke="#fff" stroke-width="3"/><path d="M24 16 Q34 16 34 26 Q34 36 24 36" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><text x="72" y="32" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="14" fill="#fff" letter-spacing=".5">vodafone</text></svg></div>
         <div class="brand-card-name">Vodafone</div>
         <div class="brand-desc">Líder em redes 5G com fibra residencial e empresarial. Excelência no serviço de apoio ao cliente e cobertura móvel superior em todo o país.</div>
         <span class="brand-pill" style="background:rgba(230,0,0,.08);color:#b80000;">5G &middot; Fibra &middot; Empresas</span>
       </div>
-
       <div class="brand-card bc-digi-c reveal">
-        <div class="brand-logo">
-          <svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg">
-            <rect width="120" height="52" rx="12" fill="#FFCD00"/>
-            <text x="60" y="35" text-anchor="middle" font-family="Sora,sans-serif" font-weight="900" font-size="26" fill="#111" letter-spacing="1">DIGI</text>
-          </svg>
-        </div>
+        <div class="brand-logo"><svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="52" rx="12" fill="#FFCD00"/><text x="60" y="35" text-anchor="middle" font-family="Sora,sans-serif" font-weight="900" font-size="26" fill="#111" letter-spacing="1">DIGI</text></svg></div>
         <div class="brand-card-name">DIGI</div>
         <div class="brand-desc">Fibra ótica até 10 Gbps com preços altamente competitivos. A alternativa low-cost de qualidade crescente no mercado português de telecomunicações.</div>
         <span class="brand-pill" style="background:rgba(255,205,0,.12);color:#9a6e00;">Low-cost &middot; Fibra &middot; Veloz</span>
       </div>
-
       <div class="brand-card bc-nowo-c reveal">
-        <div class="brand-logo">
-          <svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg">
-            <rect width="120" height="52" rx="12" fill="#FF5A00"/>
-            <text x="60" y="35" text-anchor="middle" font-family="Sora,sans-serif" font-weight="900" font-size="24" fill="#fff" letter-spacing="1">NOWO</text>
-          </svg>
-        </div>
+        <div class="brand-logo"><svg viewBox="0 0 120 52" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="52" rx="12" fill="#FF5A00"/><text x="60" y="35" text-anchor="middle" font-family="Sora,sans-serif" font-weight="900" font-size="24" fill="#fff" letter-spacing="1">NOWO</text></svg></div>
         <div class="brand-card-name">NOWO</div>
         <div class="brand-desc">Internet por rede de cabo com televisão digital e serviço de voz. Contratos flexíveis, sem período de fidelização obrigatório, para clientes residenciais.</div>
         <span class="brand-pill" style="background:rgba(255,90,0,.08);color:#FF5A00;">Cabo &middot; TV &middot; Flexível</span>
       </div>
-
     </div>
     <div style="text-align:center;margin-top:40px;">
       <a href="https://wa.me/351915006353" target="_blank" rel="noopener"
@@ -799,75 +805,32 @@ footer{background:var(--navy);padding:64px 80px 36px;}
     <h2 class="s-title">As nossas marcas de <em>Energia</em></h2>
     <p class="s-sub">Trabalhamos com os principais fornecedores de energia em Portugal para oferecer as melhores condições a particulares e empresas.</p>
     <div class="energy-cols">
-
       <div>
         <div class="ecol-title">&#9728; Solar Fotovoltaico</div>
         <div class="ecol-brands">
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#00A859"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">edp</text></svg></div>
-            <div><div class="einfo-name">EDP Solar</div><div class="einfo-sub">Instalação e monitorização de sistemas fotovoltaicos</div></div>
-          </div>
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#DC0A2D"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">galp</text></svg></div>
-            <div><div class="einfo-name">Galp Solar</div><div class="einfo-sub">Soluções solares para casa e empresa</div></div>
-          </div>
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#78BE20"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="9" fill="#fff" letter-spacing="-.3">iberdrola</text></svg></div>
-            <div><div class="einfo-name">Iberdrola Solar</div><div class="einfo-sub">Energia renovável fotovoltaica</div></div>
-          </div>
-
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#00A859"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">edp</text></svg></div><div><div class="einfo-name">EDP Solar</div><div class="einfo-sub">Instalação e monitorização de sistemas fotovoltaicos</div></div></div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#DC0A2D"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">galp</text></svg></div><div><div class="einfo-name">Galp Solar</div><div class="einfo-sub">Soluções solares para casa e empresa</div></div></div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#78BE20"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="9" fill="#fff" letter-spacing="-.3">iberdrola</text></svg></div><div><div class="einfo-name">Iberdrola Solar</div><div class="einfo-sub">Energia renovável fotovoltaica</div></div></div>
         </div>
       </div>
-
       <div>
         <div class="ecol-title">&#127968; Residencial</div>
         <div class="ecol-brands">
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#007CC2"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="11" fill="#fff" letter-spacing="-.3">endesa</text></svg></div>
-            <div><div class="einfo-name">Endesa</div><div class="einfo-sub">Eletricidade e gás natural para habitação</div></div>
-          </div>
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#78BE20"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="9" fill="#fff" letter-spacing="-.3">iberdrola</text></svg></div>
-            <div><div class="einfo-name">Iberdrola</div><div class="einfo-sub">Eletricidade e gás para particulares</div></div>
-          </div>
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#DC0A2D"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">galp</text></svg></div>
-            <div><div class="einfo-name">Galp</div><div class="einfo-sub">Gás natural e eletricidade residencial</div></div>
-          </div>
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#F4A81D"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="12" fill="#333">Repsol</text></svg></div>
-            <div><div class="einfo-name">Repsol</div><div class="einfo-sub">Energia elétrica e gás para casa</div></div>
-          </div>
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#F4C800"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="9.5" fill="#111">YES energy</text></svg></div>
-            <div><div class="einfo-name">Yes Energy</div><div class="einfo-sub">Eletricidade residencial</div></div>
-          </div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#007CC2"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="11" fill="#fff" letter-spacing="-.3">endesa</text></svg></div><div><div class="einfo-name">Endesa</div><div class="einfo-sub">Eletricidade e gás natural para habitação</div></div></div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#78BE20"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="9" fill="#fff" letter-spacing="-.3">iberdrola</text></svg></div><div><div class="einfo-name">Iberdrola</div><div class="einfo-sub">Eletricidade e gás para particulares</div></div></div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#DC0A2D"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">galp</text></svg></div><div><div class="einfo-name">Galp</div><div class="einfo-sub">Gás natural e eletricidade residencial</div></div></div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#F4A81D"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="12" fill="#333">Repsol</text></svg></div><div><div class="einfo-name">Repsol</div><div class="einfo-sub">Energia elétrica e gás para casa</div></div></div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#F4C800"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="9.5" fill="#111">YES energy</text></svg></div><div><div class="einfo-name">Yes Energy</div><div class="einfo-sub">Eletricidade residencial</div></div></div>
         </div>
       </div>
-
       <div>
         <div class="ecol-title">&#127970; Empresarial</div>
         <div class="ecol-brands">
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#1e3a5f"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="8" fill="#fff" letter-spacing="-.2">Portulogos</text></svg></div>
-            <div><div class="einfo-name">Portulogos Empresarial</div><div class="einfo-sub">Soluções de energia para empresas</div></div>
-          </div>
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#00A859"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">edp</text></svg></div>
-            <div><div class="einfo-name">EDP Empresarial</div><div class="einfo-sub">Eletricidade B2B e mercado livre</div></div>
-          </div>
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#78BE20"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="9" fill="#fff" letter-spacing="-.3">iberdrola</text></svg></div>
-            <div><div class="einfo-name">Iberdrola Empresarial</div><div class="einfo-sub">Energia renovável para empresas</div></div>
-          </div>
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#007CC2"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="11" fill="#fff" letter-spacing="-.3">endesa</text></svg></div>
-            <div><div class="einfo-name">Endesa Empresarial</div><div class="einfo-sub">Eletricidade e gás natural B2B</div></div>
-          </div>
-          <div class="ebrand reveal">
-            <div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#F4C800"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="9.5" fill="#111">YES energy</text></svg></div>
-            <div><div class="einfo-name">Yes Energy Empresarial</div><div class="einfo-sub">Soluções energéticas para empresas</div></div>
-          </div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#1e3a5f"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="8" fill="#fff" letter-spacing="-.2">Portulogos</text></svg></div><div><div class="einfo-name">Portulogos Empresarial</div><div class="einfo-sub">Soluções de energia para empresas</div></div></div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#00A859"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="14" fill="#fff">edp</text></svg></div><div><div class="einfo-name">EDP Empresarial</div><div class="einfo-sub">Eletricidade B2B e mercado livre</div></div></div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#78BE20"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="9" fill="#fff" letter-spacing="-.3">iberdrola</text></svg></div><div><div class="einfo-name">Iberdrola Empresarial</div><div class="einfo-sub">Energia renovável para empresas</div></div></div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#007CC2"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="11" fill="#fff" letter-spacing="-.3">endesa</text></svg></div><div><div class="einfo-name">Endesa Empresarial</div><div class="einfo-sub">Eletricidade e gás natural B2B</div></div></div>
+          <div class="ebrand reveal"><div class="edot"><svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="32" rx="7" fill="#F4C800"/><text x="32" y="22" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="9.5" fill="#111">YES energy</text></svg></div><div><div class="einfo-name">Yes Energy Empresarial</div><div class="einfo-sub">Soluções energéticas para empresas</div></div></div>
         </div>
       </div>
     </div>
@@ -900,9 +863,81 @@ footer{background:var(--navy);padding:64px 80px 36px;}
       <div class="svc-card reveal"><div class="svc-icon">&#128295;</div><div class="svc-name">Suporte Técnico</div><div class="svc-text">Equipa certificada para resolução de problemas técnicos com tempos de resposta otimizados e elevada taxa de resolução na primeira chamada.</div></div>
       <div class="svc-card reveal"><div class="svc-icon">&#128194;</div><div class="svc-name">Backoffice</div><div class="svc-text">Processos administrativos e operacionais que asseguram eficiência, rastreabilidade e rigor na gestão das operações do cliente.</div></div>
       <div class="svc-card reveal"><div class="svc-icon">&#128260;</div><div class="svc-name">BPO – Outsourcing de Processos</div><div class="svc-text">Externalização completa de processos de negócio, permitindo ao cliente concentrar recursos no seu core business com maior eficiência.</div></div>
+      <!-- ── REBORN AI card ── -->
+      <div class="svc-card svc-reborn reveal">
+        <div class="svc-icon">&#129302;</div>
+        <div class="svc-name">Reborn AI — Assistente Comercial</div>
+        <div class="svc-text">Inteligência Artificial ao serviço das vendas. Automatização de respostas, qualificação de leads e assistência comercial 24/7 para equipas de telecom e energia.</div>
+        <a class="svc-link" href="https://rebornaidemo.vercel.app/" target="_blank" rel="noopener">Experimentar demo &#8594;</a>
+      </div>
+      <!-- ── MYPOUPAR card ── -->
+      <div class="svc-card svc-mypoupar reveal">
+        <div class="svc-icon">&#128200;</div>
+        <div class="svc-name">MyPoupar+ — Comparador Nacional</div>
+        <div class="svc-text">O maior comparador português de energia e telecomunicações com IA real. Simule, compare e poupe nas faturas de luz, gás, fibra e telemóvel num só lugar.</div>
+        <a class="svc-link" href="https://mypoupar.pt" target="_blank" rel="noopener">Visitar mypoupar.pt &#8594;</a>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- ══ FERRAMENTAS DIGITAIS ══ -->
+<div class="tools-banner" id="ferramentas">
+  <div class="tools-inner">
+    <div class="tools-header reveal">
+      <div class="tools-pill">&#128187; Ferramentas Digitais Exclusivas</div>
+      <h2>Tecnologia que <em>potencia</em> os resultados</h2>
+      <p class="tools-sub">Desenvolvemos e comercializamos as nossas próprias plataformas digitais para maximizar a conversão das equipas.</p>
+    </div>
+    <div class="tools-grid">
+
+      <!-- REBORN AI -->
+      <div class="tool-card tc-reborn reveal">
+        <div class="tool-logo-row">
+          <div class="tool-logo-badge">&#129302;</div>
+          <div>
+            <div class="tool-name">Reborn AI</div>
+            <div class="tool-tagline">Assistente Comercial com Inteligência Artificial</div>
+          </div>
+        </div>
+        <p class="tool-desc">Plataforma de IA conversacional especializada em vendas de telecomunicações e energia. Qualifica leads automaticamente, responde a dúvidas em tempo real e assiste os agentes durante chamadas e chats. Disponível 24/7, sem custos por interação.</p>
+        <div class="tool-feats">
+          <div class="tool-feat"><div class="tool-feat-dot"></div>Qualificação automática de leads com IA</div>
+          <div class="tool-feat"><div class="tool-feat-dot"></div>Respostas instantâneas a objeções de venda</div>
+          <div class="tool-feat"><div class="tool-feat-dot"></div>Integração com WhatsApp, chat e voz</div>
+          <div class="tool-feat"><div class="tool-feat-dot"></div>Dashboard de performance em tempo real</div>
+        </div>
+        <a class="tool-cta" href="https://rebornaidemo.vercel.app/" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Ver demo ao vivo
+        </a>
+      </div>
+
+      <!-- MYPOUPAR -->
+      <div class="tool-card tc-mypoupar reveal">
+        <div class="tool-logo-row">
+          <div class="tool-logo-badge">&#128200;</div>
+          <div>
+            <div class="tool-name">MyPoupar+</div>
+            <div class="tool-tagline">Comparador Nacional de Energia &amp; Telecom com IA</div>
+          </div>
+        </div>
+        <p class="tool-desc">O comparador nacional de referência para energia e telecomunicações em Portugal. Com IA integrada, compara tarifas em tempo real de todos os operadores — EDP, Galp, Endesa, MEO, NOS, Vodafone e mais — e apresenta a poupança exata para cada perfil de consumo.</p>
+        <div class="tool-feats">
+          <div class="tool-feat"><div class="tool-feat-dot"></div>Comparação real de tarifas com IA integrada</div>
+          <div class="tool-feat"><div class="tool-feat-dot"></div>Todos os operadores de energia e telecom</div>
+          <div class="tool-feat"><div class="tool-feat-dot"></div>Cálculo de poupança personalizado por perfil</div>
+          <div class="tool-feat"><div class="tool-feat-dot"></div>Notificações automáticas de melhores ofertas</div>
+        </div>
+        <a class="tool-cta" href="https://mypoupar.pt" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Visitar mypoupar.pt
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- ══ TESTEMUNHOS ══ -->
 <section class="mvv" id="testemunhos">
@@ -916,10 +951,7 @@ footer{background:var(--navy);padding:64px 80px 36px;}
         <hr class="testi-sep">
         <div class="testi-author">
           <div class="testi-avatar" style="background:#FF6200;">JM</div>
-          <div>
-            <div class="testi-name">João Mendes</div>
-            <div class="testi-role">Diretor Geral, PME &mdash; Lisboa</div>
-          </div>
+          <div><div class="testi-name">João Mendes</div><div class="testi-role">Diretor Geral, PME &mdash; Lisboa</div></div>
         </div>
       </div>
       <div class="testi-card reveal">
@@ -928,10 +960,7 @@ footer{background:var(--navy);padding:64px 80px 36px;}
         <hr class="testi-sep">
         <div class="testi-author">
           <div class="testi-avatar" style="background:#000;">AS</div>
-          <div>
-            <div class="testi-name">Ana Silva</div>
-            <div class="testi-role">Gestora Financeira &mdash; Porto</div>
-          </div>
+          <div><div class="testi-name">Ana Silva</div><div class="testi-role">Gestora Financeira &mdash; Porto</div></div>
         </div>
       </div>
       <div class="testi-card reveal">
@@ -940,10 +969,7 @@ footer{background:var(--navy);padding:64px 80px 36px;}
         <hr class="testi-sep">
         <div class="testi-author">
           <div class="testi-avatar" style="background:#00A859;">RC</div>
-          <div>
-            <div class="testi-name">Rui Carvalho</div>
-            <div class="testi-role">Administrador &mdash; Braga</div>
-          </div>
+          <div><div class="testi-name">Rui Carvalho</div><div class="testi-role">Administrador &mdash; Braga</div></div>
         </div>
       </div>
     </div>
@@ -1007,31 +1033,19 @@ footer{background:var(--navy);padding:64px 80px 36px;}
         <div class="contact-info-list">
           <div class="ci-item">
             <div class="ci-icon" style="background:rgba(37,211,102,.1);">&#128172;</div>
-            <div>
-              <div class="ci-label">WhatsApp</div>
-              <div class="ci-val"><a href="https://wa.me/351915006353" target="_blank" style="color:#25D366;font-weight:700;">915 006 353</a></div>
-            </div>
+            <div><div class="ci-label">WhatsApp</div><div class="ci-val"><a href="https://wa.me/351915006353" target="_blank" style="color:#25D366;font-weight:700;">915 006 353</a></div></div>
           </div>
           <div class="ci-item">
             <div class="ci-icon" style="background:rgba(232,64,28,.08);">&#128140;</div>
-            <div>
-              <div class="ci-label">Email</div>
-              <div class="ci-val"><a href="mailto:parcerias@solucoesdiferentes.pt" style="color:var(--accent);font-weight:600;">parcerias@solucoesdiferentes.pt</a></div>
-            </div>
+            <div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:parcerias@solucoesdiferentes.pt" style="color:var(--accent);font-weight:600;">parcerias@solucoesdiferentes.pt</a></div></div>
           </div>
           <div class="ci-item">
             <div class="ci-icon" style="background:rgba(240,165,0,.1);">&#128336;</div>
-            <div>
-              <div class="ci-label">Horário de atendimento</div>
-              <div class="ci-val">Segunda a Sexta &mdash; 9h00 às 19h00</div>
-            </div>
+            <div><div class="ci-label">Horário de atendimento</div><div class="ci-val">Segunda a Sexta &mdash; 9h00 às 19h00</div></div>
           </div>
           <div class="ci-item">
             <div class="ci-icon" style="background:rgba(11,30,61,.07);">&#127758;</div>
-            <div>
-              <div class="ci-label">Área de atuação</div>
-              <div class="ci-val">Portugal Continental e Ilhas</div>
-            </div>
+            <div><div class="ci-label">Área de atuação</div><div class="ci-val">Portugal Continental e Ilhas</div></div>
           </div>
         </div>
       </div>
@@ -1144,6 +1158,7 @@ footer{background:var(--navy);padding:64px 80px 36px;}
           <li><a href="#telecomunicacoes">Telecomunicações</a></li>
           <li><a href="#energia">Energias</a></li>
           <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#ferramentas">Ferramentas Digitais</a></li>
           <li><a href="#testemunhos">Testemunhos</a></li>
           <li><a href="#recrutamento">Recrutamento</a></li>
           <li><a href="#contacto">Contactos</a></li>
@@ -1163,6 +1178,8 @@ footer{background:var(--navy);padding:64px 80px 36px;}
     <div class="f-col">
       <h4>Área de Parceiros</h4>
       <a class="btn-f-sim" href="https://solucoesdiferentes-simulador-energi.vercel.app/" target="_blank" rel="noopener">&#9889; Simulador de Energia</a>
+      <a class="btn-f-sim" href="https://mypoupar.pt" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#f59e0b,#e8401c);margin-top:0;">&#128200; MyPoupar+</a>
+      <a class="btn-f-sim" href="https://rebornaidemo.vercel.app/" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#0b1e3d,#00b4d8);margin-top:0;">&#129302; Reborn AI</a>
       <a class="btn-f-crm" href="https://v0-crm-web-app-snowy.vercel.app/login" target="_blank" rel="noopener">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
         Aceder ao CRM
@@ -1229,9 +1246,7 @@ function chkMob() { if (mob) mob.style.display = window.innerWidth <= 768 ? 'fle
 chkMob(); window.addEventListener('resize', chkMob);
 
 // ── REVEAL
-new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.08 }).observe && document.querySelectorAll('.reveal').forEach(el => {
+document.querySelectorAll('.reveal').forEach(el => {
   new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
   }, { threshold: 0.08 }).observe(el);
@@ -1277,4 +1292,4 @@ function fCols() {
 fCols(); window.addEventListener('resize', fCols);
 </script>
 </body>
-</html>Acrescentar o link https://rebornaidemo.vercel.app/ para a landing page reborn ai botao como uma das ferramentas comercialisadas pelas solucoesdiferentes.pt acrescentar o site mypoupar.pt o comparador nacional de energia telecom com ia real etc
+</html>
