@@ -42,6 +42,9 @@ jobs:
               exit 0
             fi
             echo "Retry $attempt (status=$status)"
+            echo '--- Received headers (redacted) ---'
+            grep -iE '^(HTTP/|location:|server:|content-security-policy:|x-frame-options:|referrer-policy:|x-content-type-options:|strict-transport-security:|permissions-policy:)' /tmp/headers.txt | cut -c1-480 || true
+            echo '--- End ---'
             sleep 8
           done
           echo '::error::Security headers are not live.'
