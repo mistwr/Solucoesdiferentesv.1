@@ -1,0 +1,67 @@
+name: Soluções Diferentes - validate production security headers
+on:
+  push:
+    branches: [main]
+    paths: ['vercel.json','.github/workflows/security-headers-smoke.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  headers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate header configuration
+        run: |
+          node - <<'NODE'
+          const assert=require('node:assert/strict');
+          const fs=require('node:fs');
+          const config=JSON.parse(fs.readFileSync('vercel.json','utf8'));
+          const headers=Object.fromEntries(config.headers[0].headers.map(x=>[x.key.toLowerCase(),x.value]));
+          for(const k of ['content-security-policy','x-frame-options','referrer-policy','x-content-type-options','strict-transport-security'])
+            assert(headers[k], 'Missing header '+k);
+          assert(headers['content-security-policy'].includes("frame-ancestors 'none'"));
+          assert(headers['content-security-policy'].includes('https://fonts.googleapis.com'));
+          assert(headers['content-security-policy'].includes('https://images.unsplash.com'));
+          console.log('Header configuration OK');
+          NODE
+      - name: Verify headers on actual website
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3 4 5 6; do
+            status=$(curl -sS -L -I --max-time 15 -o /tmp/headers.txt -w '%{http_code}' https://www.solucoesdiferentes.pt/ || true)
+            if [ "$status" = "200" ] && \
+              grep -qi '^content-security-policy:' /tmp/headers.txt && \
+              grep -qi '^x-frame-options: DENY' /tmp/headers.txt && \
+              grep -qi '^referrer-policy: strict-origin-when-cross-origin' /tmp/headers.txt && \
+              grep -qi '^x-content-type-options: nosniff' /tmp/headers.txt; then
+              echo "SECURITY HEADERS LIVE: HTTP $status, verified at attempt $attempt"
+              grep -Ei '^(content-security-policy|x-frame-options|referrer-policy|x-content-type-options|strict-transport-security|permissions-policy):' /tmp/headers.txt
+              exit 0
+            fi
+            echo "Retry $attempt (status=$status)"
+            sleep 8
+          done
+          echo '::error::Security headers are not live.'
+          exit 1
+      - name: Verify LUMIN Security AI diagnosis
+        shell: bash
+        run: |
+          set -euo pipefail
+          code=$(curl --silent --show-error --max-time 20 \
+            -o /tmp/diagnosis.json -w '%{http_code}' -X POST \
+            'https://luminai.pt/api/security-check' \
+            -H 'Content-Type: application/json' -H 'Origin: https://luminai.pt' \
+            --data '{"url":"https://www.solucoesdiferentes.pt/"}')
+          test "$code" = "200"
+          node - <<'JS'
+          const assert=require('node:assert/strict');
+          const fs=require('node:fs');
+          const r=JSON.parse(fs.readFileSync('/tmp/diagnosis.json','utf8'));
+          assert.equal(r.ok,true);
+          assert.equal(r.checks.length,5);
+          console.log('LUMIN observed', r.checks.map(x=>x.title+': '+(x.observed?'OK':'REVIEW')).join(', '));
+          assert.equal(r.missingChecks,0,'Expected all five configuration headers to be present');
+          JS
