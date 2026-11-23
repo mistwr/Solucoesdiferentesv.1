@@ -1465,6 +1465,27 @@ fCols(); window.addEventListener('resize', fCols);
 .natal-cta{display:inline-flex;align-items:center;gap:8px;background:#d4af37;color:#1f2937;padding:14px 26px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:800;text-decoration:none}
 .natal-cta:hover{background:#e8c766}
 @media(max-width:900px){.natal-bar{padding:9px 16px;font-size:.76rem;flex-wrap:wrap;gap:8px}.natal-sec{padding:52px 22px}.natal-wrap{grid-template-columns:1fr}}
+.natal-luzes{display:none;height:14px;background:#0c2b1e;position:relative;overflow:hidden;border-bottom:1px solid rgba(212,175,55,.25)}
+.natal-on .natal-luzes{display:block}
+.natal-luzes:before{content:"";position:absolute;left:0;right:0;top:3px;height:1px;background:rgba(212,175,55,.45)}
+.natal-luzes i{position:absolute;top:4px;width:6px;height:6px;border-radius:50%;background:#f3d77a;box-shadow:0 0 6px 1px rgba(243,215,122,.8);animation:natalBrilho 3.2s ease-in-out infinite}
+.natal-luzes i:nth-child(3n){background:#e8505a;box-shadow:0 0 6px 1px rgba(232,80,90,.7)}
+@keyframes natalBrilho{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+.natal-treno{position:absolute;top:13%;left:0;width:min(420px,46vw);pointer-events:none;z-index:3;opacity:0;filter:drop-shadow(0 0 10px rgba(243,215,122,.45));animation:natalVoo 26s cubic-bezier(.45,.05,.55,.95) 2.5s infinite}
+@keyframes natalVoo{0%{transform:translate(-50vw,40px) rotate(-3deg);opacity:0}4%{opacity:.9}38%{transform:translate(110vw,-30px) rotate(-6deg);opacity:.9}42%,100%{transform:translate(115vw,-34px);opacity:0}}
+.natal-pn{position:relative;display:flex;justify-content:center;margin-bottom:6px}
+.natal-pn:before{content:"";position:absolute;width:190px;height:190px;top:10px;border-radius:50%;background:radial-gradient(circle,rgba(243,215,122,.28),rgba(243,215,122,0) 68%);animation:natalAura 5s ease-in-out infinite}
+.natal-pn img{position:relative;width:170px;height:auto;animation:natalFlutua 6s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes natalFlutua{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes natalAura{0%,100%{opacity:.6;transform:scale(.95)}50%{opacity:1;transform:scale(1.06)}}
+.natal-sec .natal-wrap>div{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+.natal-sec.visivel .natal-wrap>div{opacity:1;transform:none}
+.natal-sec.visivel .natal-wrap>div:nth-child(2){transition-delay:.2s}
+.natal-cta{position:relative;overflow:hidden}
+.natal-cta:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);animation:natalReflexo 4.5s ease-in-out infinite}
+@keyframes natalReflexo{0%,60%{left:-60%}100%{left:130%}}
+@media (prefers-reduced-motion:reduce){.natal-treno,.natal-cta:after{display:none}.natal-pn img,.natal-pn:before,.natal-luzes i{animation:none}.natal-sec .natal-wrap>div{opacity:1;transform:none}}
+@media(max-width:900px){.natal-treno{top:8%;width:62vw}.natal-pn img{width:130px}}
 </style>
 <script>
 (function(){
@@ -1476,20 +1497,25 @@ fCols(); window.addEventListener('resize', fCols);
   var bar=document.createElement('div'); bar.className='natal-bar';
   bar.innerHTML='<span>🎄 Boas Festas! Comece 2027 a pagar menos — revisão gratuita das suas faturas nesta época de Natal.</span><a href="'+wa+'" target="_blank" rel="noopener">Pedir revisão</a>';
   document.body.insertBefore(bar, document.body.firstChild);
+  var luz=document.createElement('div'); luz.className='natal-luzes'; luz.setAttribute('aria-hidden','true');
+  for(var k=0;k<44;k++){var b=document.createElement('i');b.style.left=(1+k*2.3)+'%';b.style.top=(4+Math.round(3*Math.sin(k*0.9)))+'px';b.style.animationDelay=((k*0.37)%3.2).toFixed(2)+'s';luz.appendChild(b);}
+  bar.parentNode.insertBefore(luz, bar.nextSibling);
   // Neve discreta no hero + selo no 1.º slide
   var hero=document.getElementById('hero');
   if(hero){
     var neve=document.createElement('div'); neve.className='natal-neve'; neve.setAttribute('aria-hidden','true');
     for(var i=0;i<34;i++){var f=document.createElement('i'),s=2+(i*7)%5;f.style.left=((i*29)%100)+'%';f.style.width=f.style.height=s+'px';f.style.opacity=(0.35+((i*3)%5)/10).toFixed(2);f.style.animationDuration=(9+(i*5)%9)+'s';f.style.animationDelay=((i*1.3)%12)+'s';neve.appendChild(f);}
     hero.appendChild(neve);
+    var tr=document.createElement('img'); tr.src='/natal/treno.svg'; tr.alt=''; tr.className='natal-treno'; tr.setAttribute('aria-hidden','true'); hero.appendChild(tr);
     var tag=hero.querySelector('.slide.sl1 .hero-tag');
     if(tag){var chip=document.createElement('div');chip.className='natal-chip';chip.textContent='🎁 Campanha de Natal · revisão de faturas gratuita';tag.parentNode.insertBefore(chip,tag);}
   }
   // Secção de Natal antes do contacto
   var sec=document.createElement('section'); sec.className='natal-sec'; sec.id='natal';
-  sec.innerHTML='<div class="natal-wrap"><div><div class="s-label">Campanha de Natal</div><h2>Este Natal, ofereça à sua casa uma <em>fatura mais baixa</em></h2><p>Comparamos gratuitamente o que paga hoje em internet, TV, telemóveis e energia com as campanhas de todas as operadoras com quem trabalhamos. Se houver melhor, mostramos-lhe; se não houver, fica a saber que está bem servido.</p><a class="natal-cta" href="'+wa+'" target="_blank" rel="noopener">🎄 Pedir a minha revisão de Natal</a></div><div class="natal-list"><div class="natal-item">💶<div><b>Sem custos nem compromisso</b><span>Só avança se a proposta fizer sentido para si.</span></div></div><div class="natal-item">📄<div><b>Basta a última fatura</b><span>Envie uma foto por WhatsApp e tratamos do resto.</span></div></div><div class="natal-item">🗓️<div><b>Entre em 2027 já a poupar</b><span>A diferença de cada mês, ao fim do ano, ajuda nas prendas do próximo Natal.</span></div></div></div></div>';
+  sec.innerHTML='<div class="natal-wrap"><div><div class="s-label">Campanha de Natal</div><h2>Este Natal, ofereça à sua casa uma <em>fatura mais baixa</em></h2><p>Comparamos gratuitamente o que paga hoje em internet, TV, telemóveis e energia com as campanhas de todas as operadoras com quem trabalhamos. Se houver melhor, mostramos-lhe; se não houver, fica a saber que está bem servido.</p><a class="natal-cta" href="'+wa+'" target="_blank" rel="noopener">🎄 Pedir a minha revisão de Natal</a></div><div><div class="natal-pn"><img src="/natal/pai-natal.svg" alt="Pai Natal" width="170" height="196"></div><div class="natal-list"><div class="natal-item">💶<div><b>Sem custos nem compromisso</b><span>Só avança se a proposta fizer sentido para si.</span></div></div><div class="natal-item">📄<div><b>Basta a última fatura</b><span>Envie uma foto por WhatsApp e tratamos do resto.</span></div></div><div class="natal-item">🗓️<div><b>Entre em 2027 já a poupar</b><span>A diferença de cada mês, ao fim do ano, ajuda nas prendas do próximo Natal.</span></div></div></div></div></div>';
   var contacto=document.getElementById('contacto');
   if(contacto&&contacto.parentNode) contacto.parentNode.insertBefore(sec,contacto);
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){sec.classList.add('visivel');io.disconnect();}},{threshold:.2});io.observe(sec);}else sec.classList.add('visivel');
 })();
 </script>
 
