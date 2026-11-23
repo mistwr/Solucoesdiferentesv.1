@@ -1,0 +1,8 @@
+[build]
+  base = "/"
+  publish = "public"
+  functions = "netlify/functions"
+  command = "echo ok"
+
+[build.environment]
+  NODE_VERSION = "22"
